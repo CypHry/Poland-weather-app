@@ -6,6 +6,7 @@
 \usepackage{pmgraph}
 \usepackage[normalem]{ulem}
 \usepackage{graphicx} 
+\usepackage{booktabs} 
 
 \title{\vspace{175pt}\textbf{Wizualizacja pogody w Polsce\\}  \small{\vspace{10pt}Wizualizacja danych sensorycznych}}
 \author{Cyprian Hryniuk}
@@ -42,7 +43,7 @@ Wszystkie dokumenty dotyczące projektu będą tworzone w systemie \LaTeX. Cało
 \label{ssec:funkc}
 \begin{itemize}
   \item Zbieranie danych dotyczących pogody oraz jej prognozy z odpowiednich serwisów internetowych.
-  \item Przechowywanie i wizualizowanie historii, akutalnej i prognozy pogody dla terenu całej Polski oraz dokładniejszych inforamcji dla większych miast.
+  \item Przechowywanie i animowane wizualizowanie historii, akutalnej i prognozy pogody dla terenu całej Polski oraz dokładniejszych inforamcji dla większych miast.
   \item Użytkownik będzie miał możliwość przęłączania się pomiędzy wizualizacją pogody dla wybranego terminu (historię/aktualną/prognozę). 
   \item Użytkownik będzie miał możliwość przełączania się międzya wizualizacją pogody dla terenu całej Polski albo dla wybranego miasta.
   
@@ -50,34 +51,49 @@ Wszystkie dokumenty dotyczące projektu będą tworzone w systemie \LaTeX. Cało
 
 \section{Harmonogram}
 \label{sec:harmonogram}
-
+\subsection{Wykres Gantta}
+    \begin{figure}[h]
+    \centering
+	\includegraphics[width=0.94\textwidth]{wizualizacja_gantt.png}
+	\caption{Wykres Gantta}
+\end{figure}
+\newpage
 \subsection{Spis zadań}
-\hspace{20pt} 18.03 - 21.03
+\begin{table}[!h]
+	\centering
+	\caption{Harmonogram zadań}
+	\label{table_exres}
+	\begin{tabular}{p{20mm}p{120mm}}
+		\toprule
+		termin & opis\\ \midrule
+		18.03 -- 22.03 & 1. Określenie wymagań użytkownika, funkcjonalności, dekompozycja problemu  \\
+		\midrule
+		22.03 - 28.03 & 2. Wstępny projekt interfejsu graficznego stworzonego w QtDesignerze. \newline 3. Zebranie odpowiednich grafik potrzebnych do stworzenia aplikacji okienkowej.\\
+		\midrule
+	    29.03 - 4.04 & 4. Pobieranie danych z serwisów internetowych, przetworzenie ich oraz zapis do plików tekstowych przechowujących zebrane dane. \\
+		\midrule
+		 5.04 - 11.04 & 5. Wstępna wizualizacja danych pogodowych - dla aktualnej pogody - obszar Polski. \newline 6. Sporządzenie raportu wstępnego.\\
+		 \midrule
+        12.04 - 18.04 &  7. Wstępna wizualizacja danych pogodowych - dla aktualnej pogody - wybrane miasta.\\
 
-\begin{enumerate}
-    \item Określenie wymagań użytkownika, funkcjonalności, dekompozycja problemu. \vspace{9 pt}\\22.03 - 28.03
-    \item Wstępny projekt interfejsu graficznego stworzonego w QtDesignerze.
-    \item Zebranie odpowiednich grafik potrzebnych do stworzenia aplikacji okienkowej.
-    \vspace{9 pt}\\29.03 - 4.04
-    \item Pobieranie danych z serwisów internetowych, przetworzenie ich oraz zapis do plików tekstowych przechowujących zebrane dane. 
-    \vspace{9 pt}\\5.04 - 11.04
-    \item Wstępna wizualizacja danych pogodowych - dla aktualnej pogody - obszar Polski.
-    \item Sporządzenie raportu wstępnego.
-    \vspace{9 pt}\\12.04 - 18.04
-    \item Wstępna wizualizacja danych pogodowych - dla aktualnej pogody - wybrane miasta.
-    \vspace{9 pt}\\19.04 - 1.05
-    \item Wstępna wizualizacja danych pogodowych - historia oraz prognoza pogody - obszar Polski.
-    \vspace{9 pt}\\2.05 - 16.05
-    \item Wstępna wizualizacja danych pogodowych - historia oraz prognoza pogody - wybrane miasta.
-    \item Sporządzenie raportu rezultatów zaawansowanych.
-    \vspace{9 pt}\\16.05 - 30.05
-    \item Dopracowanie wizualizacji danych pogodowych. 
-    \item Sporządzenie raportu rezultatów prawie końcowych.
-    \vspace{9 pt}\\30.05 - 16.06
-    \item Dopracowanie interfejsu graficznego, optymalizacja kodu. 
-    \item Sporządzenie raportu końcowego.
-    \item Tworzenie dokumentacji w doxygenie. - cały czas tworzenia oprogramowania
-\end{enumerate}
+		\midrule
+        19.04 - 1.05 & 8. Wstępna wizualizacja danych pogodowych - historia oraz prognoza pogody - obszar Polski. \\ 
+
+		\midrule
+        2.05 - 16.05 & 9. Wstępna wizualizacja danych pogodowych - historia oraz prognoza pogody - wybrane miasta. \newline 10. Sporządzenie raportu rezultatów zaawansowanych. \\
+
+		\midrule
+        16.05 - 30.05 & 11. Dopracowanie wizualizacji danych pogodowych - animacja. \newline 12. Sporządzenie raportu rezultatów prawie końcowych. \\
+        
+        \midrule 
+        30.05 - 16.06 & 13. Dopracowanie interfejsu graficznego, optymalizacja kodu. 
+        \newline 14. Sporządzenie raportu końcowego. \\
+        \midrule
+        22.03 - 15.06 & 15. Tworzenie dokumentacji w doxygenie. \\
+
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 \subsection{Kamienie milowe}
    \begin{table}[!h]
@@ -92,11 +108,6 @@ Wszystkie dokumenty dotyczące projektu będą tworzone w systemie \LaTeX. Cało
 	\caption{Kamienie milowe}
 \end{table}
 
-\subsection{Wykres Gantta}
-    \begin{figure}[h]
-    \centering
-	\includegraphics[width=0.64\textwidth]{wizualizacja_gantt.png}
-	\caption{Wykres Gantta}
-\end{figure}
+
 
 \end{document}
