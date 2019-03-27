@@ -68,28 +68,28 @@ Wszystkie dokumenty dotyczące projektu będą tworzone w systemie \LaTeX. Cało
 		termin & opis\\ \midrule
 		18.03 -- 22.03 & 1. Określenie wymagań użytkownika, funkcjonalności, dekompozycja problemu  \\
 		\midrule
-		22.03 - 28.03 & 2. Wstępny projekt interfejsu graficznego stworzonego w QtDesignerze. \newline 3. Zebranie odpowiednich grafik potrzebnych do stworzenia aplikacji okienkowej.\\
+		22.03 -- 28.03 & 2. Wstępny projekt interfejsu graficznego stworzonego w QtDesignerze. \newline 3. Zebranie odpowiednich grafik potrzebnych do stworzenia aplikacji okienkowej.\\
 		\midrule
-	    29.03 - 4.04 & 4. Pobieranie danych z serwisów internetowych, przetworzenie ich oraz zapis do plików tekstowych przechowujących zebrane dane. \\
+	    29.03 -- 4.04 & 4. Pobieranie danych z serwisów internetowych, przetworzenie ich oraz zapis do plików tekstowych przechowujących zebrane dane. \\
 		\midrule
-		 5.04 - 11.04 & 5. Wstępna wizualizacja danych pogodowych - dla aktualnej pogody - obszar Polski. \newline 6. Sporządzenie raportu wstępnego.\\
+		 5.04 -- 11.04 & 5. Wstępna wizualizacja danych pogodowych - dla aktualnej pogody - obszar Polski. \newline 6. Sporządzenie raportu wstępnego.\\
 		 \midrule
-        12.04 - 18.04 &  7. Wstępna wizualizacja danych pogodowych - dla aktualnej pogody - wybrane miasta.\\
+        12.04 -- 18.04 &  7. Wstępna wizualizacja danych pogodowych - dla aktualnej pogody - wybrane miasta.\\
 
 		\midrule
-        19.04 - 1.05 & 8. Wstępna wizualizacja danych pogodowych - historia oraz prognoza pogody - obszar Polski. \\ 
+        19.04 -- 1.05 & 8. Wstępna wizualizacja danych pogodowych - historia oraz prognoza pogody - obszar Polski. \\ 
 
 		\midrule
-        2.05 - 16.05 & 9. Wstępna wizualizacja danych pogodowych - historia oraz prognoza pogody - wybrane miasta. \newline 10. Sporządzenie raportu rezultatów zaawansowanych. \\
+        2.05 -- 16.05 & 9. Wstępna wizualizacja danych pogodowych - historia oraz prognoza pogody - wybrane miasta. \newline 10. Sporządzenie raportu rezultatów zaawansowanych. \\
 
 		\midrule
-        16.05 - 30.05 & 11. Dopracowanie wizualizacji danych pogodowych - animacja. \newline 12. Sporządzenie raportu rezultatów prawie końcowych. \\
+        16.05 -- 30.05 & 11. Dopracowanie wizualizacji danych pogodowych - animacja. \newline 12. Sporządzenie raportu rezultatów prawie końcowych. \\
         
         \midrule 
-        30.05 - 16.06 & 13. Dopracowanie interfejsu graficznego, optymalizacja kodu. 
+        30.05 -- 16.06 & 13. Dopracowanie interfejsu graficznego, optymalizacja kodu. 
         \newline 14. Sporządzenie raportu końcowego. \\
         \midrule
-        22.03 - 15.06 & 15. Tworzenie dokumentacji w doxygenie. \\
+        22.03 -- 15.06 & 15. Tworzenie dokumentacji w doxygenie. \\
 
 		\bottomrule
 	\end{tabular}
@@ -108,6 +108,33 @@ Wszystkie dokumenty dotyczące projektu będą tworzone w systemie \LaTeX. Cało
 	\caption{Kamienie milowe}
 \end{table}
 
+\section{Projekt interfejsu graficznego użytkownika}
+\subsection{Funkcjonalności}
+\begin{itemize}
+    \item Wybór daty i godziny -- użytkownik będzie mógł dokonać wyboru poprzez zaznaczenie na kalendarzu odpowiedniego terminu oraz godziny. Zarówno kalendarz jak i dostępne godziny będą wyświetlane jako rozwijalne menu.
+    \item Wybór miejsca -- wybór miejsca będzie zrealizowany na dwa sposoby. Poprzez kliknięcie na miasto, które nas interesuje w zakładce z mapą (na mapie miasta będzie również strzałka, której naciśniecie spowoduje powrót do mapy Polski), a także poprzez zaznaczenie miasta na liscie rozwijalnej w zakładce z wykresami.
+    \item Zbieranie danych pogodywych dla wyznaczonej daty i miejsca -- dane dotyczące prognozy tygodniowej, a także przechowywanie historii pogody z poprzedniego tygodnia będzie zautomatyzowane, jednak kiedy użytkownik będzie chciał wyświetlić pogodę z dnia wczesniejszego lub późniejszegoniż przewidziano pokaże się okienko z informacją o braku danych oraz zapytaniem o uzupełnienie ich.
+    \item Wyświetlanie danych pogodowych dla wyznaczonej daty i miejsca -- dane prezentowane będą na 2 sposoby - na mapie polski/poszczególnego miasta, a także w postaci wykresów z przebiegiem godzinowym dla poszczególnych wielkości. Przełaczanie się między nimi będzie zrealizowane poprzez przełączanie się między zakładkami. Obie wizualizacje będą ze sobą połączone (wybór miejsca i daty na mapie będzie również zmieniał dane wyświetlane na wykresach i na odwrót). 
+    \item Włączanie i wyłączanie animacji wizualizujących dane - aplikacja domyślnie wyswietlała będzie pogodę w postaci krótkich animacji, które bedzie można wyłączyć i spowrotem włączyć poprzez zaznaczenie/odznaczenie pola wyboru.
+\end{itemize}
+\subsection{Rysunki interfejsu}
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=0.80\textwidth]{rysunek_mapa.png}
+	\caption{Zakładka z mapą}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=0.80\textwidth]{rysunek_wykresy.png}
+	\caption{Zakładka z wykresami}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=0.80\textwidth]{rysunek_brak_danych.png}
+	\caption{Zakładka z komunikatem}
+\end{figure}
 
 
 \end{document}
