@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>900</width>
-    <height>650</height>
+    <width>919</width>
+    <height>639</height>
    </rect>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Pogoda w Polsce</string>
@@ -16,72 +22,327 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>550</y>
-      <width>89</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>back</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>560</y>
-      <width>89</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>exit</string>
-    </property>
-   </widget>
-   <widget class="KDateTimeEdit" name="date_and_time">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>510</y>
-      <width>199</width>
-      <height>24</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>20</y>
-      <width>611</width>
-      <height>481</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>graphics/map_of_poland.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_9">
+      <item row="0" column="0">
+       <layout class="QGridLayout" name="gridLayout_10">
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="styleSheet">
+           <string notr="true">font: 25 10pt &quot;Cantarell&quot;;
+</string>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>mapa</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0">
+               <layout class="QGridLayout" name="gridLayout_4">
+                <item row="0" column="0">
+                 <widget class="QGraphicsView" name="map">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>350</width>
+                    <height>250</height>
+                   </size>
+                  </property>
+                  <property name="sizeIncrement">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="mouseTracking">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="0" column="1">
+               <layout class="QGridLayout" name="gridLayout_6">
+                <item row="0" column="0">
+                 <layout class="QGridLayout" name="gridLayout_7">
+                  <item row="1" column="0">
+                   <widget class="KTimeComboBox" name="time_dropdown">
+                    <property name="styleSheet">
+                     <string notr="true">font: 25 10pt &quot;Cantarell&quot;;</string>
+                    </property>
+                    <property name="currentText">
+                     <string>00:00</string>
+                    </property>
+                    <property name="maxVisibleItems">
+                     <number>4</number>
+                    </property>
+                    <property name="timeListInterval">
+                     <number>60</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QCheckBox" name="animations_checkBox">
+                    <property name="styleSheet">
+                     <string notr="true">font: 25 10pt &quot;Cantarell Light&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>animacje</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="KDateComboBox" name="date_dropdown">
+                    <property name="styleSheet">
+                     <string notr="true">font: 25 10pt &quot;Cantarell&quot;;</string>
+                    </property>
+                    <property name="frame">
+                     <bool>true</bool>
+                    </property>
+                    <property name="options">
+                     <set>KDateComboBox::DatePicker|KDateComboBox::EditDate|KDateComboBox::SelectDate</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <spacer name="verticalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>wykresy</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="7" column="0">
+             <widget class="QGraphicsView" name="graphicsView"/>
+            </item>
+            <item row="6" column="0">
+             <layout class="QGridLayout" name="gridLayout_14">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>wykres 1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="5" column="0">
+             <widget class="QGraphicsView" name="graphicsView_2"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QGraphicsView" name="graphicsView_3"/>
+            </item>
+            <item row="2" column="0">
+             <layout class="QGridLayout" name="gridLayout_11">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>wykres 1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <spacer name="horizontalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="8" column="0">
+             <layout class="QGridLayout" name="gridLayout_15">
+              <item row="0" column="0">
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1">
+               <widget class="QComboBox" name="city_dropdown"/>
+              </item>
+              <item row="0" column="2">
+               <widget class="KDateComboBox" name="date_dropdown2">
+                <property name="options">
+                 <set>KDateComboBox::DatePicker|KDateComboBox::EditDate|KDateComboBox::SelectDate</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="KTimeComboBox" name="time_dropdown2">
+                <property name="timeListInterval">
+                 <number>60</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="0">
+             <layout class="QGridLayout" name="gridLayout_12">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>wykres 1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <widget class="QGraphicsView" name="graphicsView_4"/>
+            </item>
+            <item row="4" column="0">
+             <layout class="QGridLayout" name="gridLayout_13">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>wykres 1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="0">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="exit_button">
+          <property name="styleSheet">
+           <string notr="true">font: 25 10pt &quot;Cantarell&quot;;</string>
+          </property>
+          <property name="text">
+           <string>exit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>900</width>
+     <width>919</width>
      <height>22</height>
     </rect>
    </property>
@@ -90,11 +351,129 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KDateTimeEdit</class>
-   <extends>QWidget</extends>
-   <header>kdatetimeedit.h</header>
+   <class>KTimeComboBox</class>
+   <extends>QComboBox</extends>
+   <header>ktimecombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KDateComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kdatecombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>exit_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>845</x>
+     <y>595</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>880</x>
+     <y>611</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>date_dropdown</sender>
+   <signal>dateChanged(QDate)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>825</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>date_dropdown2</sender>
+   <signal>dateChanged(QDate)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>747</x>
+     <y>548</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>549</x>
+     <y>579</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>time_dropdown2</sender>
+   <signal>timeChanged(QTime)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>850</x>
+     <y>538</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>768</x>
+     <y>586</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>city_dropdown</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>648</x>
+     <y>535</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>621</x>
+     <y>599</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>time_dropdown</sender>
+   <signal>timeChanged(QTime)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>780</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>899</x>
+     <y>173</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>animations_checkBox</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>animations_checkBox</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>761</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
