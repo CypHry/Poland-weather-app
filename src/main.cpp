@@ -1,5 +1,5 @@
-#include "ui_pogoda.h"
 #include "weather_MainWindow.h"
+#include "weather_data_caller.h"
 
 int main(int argc, char** argv)
 {

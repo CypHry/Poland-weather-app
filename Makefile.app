@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -std=c++11 -O2 -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -Ipro -I. -Iinc -isystem /usr/include/qt -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtCore -I. -isystem /usr/include/libdrm -I/usr/lib/qt/mkspecs/linux-g++
+INCPATH       = -Ipro -I. -Iinc -isystem /usr/include/qt -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtCore -I. -isystem /usr/include/libdrm -I/usr/lib/qt/mkspecs/linux-g++
 QMAKE         = /usr/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = pogoda1.0.0
 DISTDIR = /home/cyprian/s6_projects/pogoda/obj/pogoda1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now
-LIBS          = $(SUBLIBS) -lQt5Widgets -lQt5Gui -lQt5Core /usr/lib/libGL.so -lpthread   
+LIBS          = $(SUBLIBS) -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Core /usr/lib/libGL.so -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -52,8 +52,12 @@ OBJECTS_DIR   = obj/
 
 ####### Files
 
-SOURCES       = src/main.cpp 
-OBJECTS       = obj/main.o
+SOURCES       = src/main.cpp \
+		src/weather_data_caller.cpp \
+		src/weather_MainWindow.cpp 
+OBJECTS       = obj/main.o \
+		obj/weather_data_caller.o \
+		obj/weather_MainWindow.o
 DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/common/unix.conf \
 		/usr/lib/qt/mkspecs/common/linux.conf \
@@ -222,7 +226,9 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/exceptions.prf \
 		/usr/lib/qt/mkspecs/features/yacc.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
-		pro/pro/pogoda.pro  src/main.cpp
+		pro/pro/pogoda.pro  src/main.cpp \
+		src/weather_data_caller.cpp \
+		src/weather_MainWindow.cpp
 QMAKE_TARGET  = pogoda
 DESTDIR       = 
 TARGET        = pogoda
@@ -405,6 +411,7 @@ Makefile.app: pro/pogoda.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/q
 		pro/pogoda.pro \
 		/usr/lib/libQt5Widgets.prl \
 		/usr/lib/libQt5Gui.prl \
+		/usr/lib/libQt5Network.prl \
 		/usr/lib/libQt5Core.prl
 	$(QMAKE) -o Makefile.app pro/pogoda.pro
 /usr/lib/qt/mkspecs/features/spec_pre.prf:
@@ -578,6 +585,7 @@ Makefile.app: pro/pogoda.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/q
 pro/pogoda.pro:
 /usr/lib/libQt5Widgets.prl:
 /usr/lib/libQt5Gui.prl:
+/usr/lib/libQt5Network.prl:
 /usr/lib/libQt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile.app pro/pogoda.pro
@@ -594,7 +602,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/main.cpp src/weather_data_caller.cpp src/weather_MainWindow.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -644,9 +652,17 @@ compiler_clean: compiler_moc_predefs_clean
 
 ####### Compile
 
-obj/main.o: src/main.cpp inc/ui_pogoda.h \
-		inc/weather_MainWindow.h
+obj/main.o: src/main.cpp inc/weather_MainWindow.h \
+		inc/ui_pogoda.h \
+		inc/weather_data_caller.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
+
+obj/weather_data_caller.o: src/weather_data_caller.cpp inc/weather_data_caller.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/weather_data_caller.o src/weather_data_caller.cpp
+
+obj/weather_MainWindow.o: src/weather_MainWindow.cpp inc/weather_MainWindow.h \
+		inc/ui_pogoda.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/weather_MainWindow.o src/weather_MainWindow.cpp
 
 ####### Install
 
