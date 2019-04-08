@@ -2,9 +2,10 @@ NAZWA_APLIKACJI=pogoda
 URUCHOMIENIE_APLIKACJI=./${NAZWA_APLIKACJI}
 ZRODLA_PROJEKTU=`/bin/pwd`/src/*.cpp `/bin/pwd`/inc/*.hpp `/bin/pwd`/ui/*.ui`/bin/pwd`/inc/*.h
 PODSTAWIENIA=OBJECTS_DIR=${KATALOG_OBJ} INCLUDEPATH=inc\
-                         QT+=widgets QMAKE_CXXFLAGS=-std=c++11
+                         QT+=widgets QT+=network HEADERS+=../inc/weather_data_caller.h\
+			QMAKE_CXXFLAGS=-std=c++11 MOC_DIR=${KATALOG_MOC}
 KATALOG_OBJ=./obj
-
+KATALOG_MOC=./moc
 
 __start__: __sprawdz_Qt__ ${NAZWA_APLIKACJI}
 	rm -f core*; ${URUCHOMIENIE_APLIKACJI}
