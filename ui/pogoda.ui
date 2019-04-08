@@ -473,12 +473,76 @@
    <slot>update()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>761</x>
-     <y>151</y>
+     <x>867</x>
+     <y>155</y>
     </hint>
     <hint type="destinationlabel">
-     <x>761</x>
-     <y>151</y>
+     <x>867</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>date_edit</sender>
+   <signal>dateChanged(QDate)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>819</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>905</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>time_edit</sender>
+   <signal>timeChanged(QTime)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>810</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>899</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>date_edit2</sender>
+   <signal>dateChanged(QDate)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>753</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>739</x>
+     <y>592</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>time_edit2</sender>
+   <signal>timeChanged(QTime)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>547</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>797</x>
+     <y>582</y>
     </hint>
    </hints>
   </connection>
