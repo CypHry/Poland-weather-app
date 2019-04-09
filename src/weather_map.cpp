@@ -6,16 +6,16 @@ weather_map::weather_map()
     QPixmap pix("img/map_of_poland.png");
     map_img = scene->addPixmap(pix);
     poznan = scene->addText("Poznan");
-    poznan->setPos(150,150);
+    poznan->setPos(180,265);
     warszawa = scene->addText("Warszawa");
-    warszawa->setPos(150,250);
+    warszawa->setPos(465,270);
     gdansk = scene->addText("Gdansk");
-    gdansk->setPos(50,150);
+    gdansk->setPos(270,40);
     wroclaw = scene->addText("Wroclaw");
-    wroclaw->setPos(350,150);
+    wroclaw->setPos(200,380);
     krakow = scene->addText("Krakow");
-    krakow->setPos(350,350);
+    krakow->setPos(380,500);
     katowice = scene->addText("Katowice");
-    katowice->setPos(450,250);
+    katowice->setPos(330,500);
 
 }
