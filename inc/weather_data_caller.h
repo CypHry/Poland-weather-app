@@ -88,13 +88,13 @@ public:
     /** Prints answer to the stream.
      *
      */
-    void print_answer() {qDebug() << answer;}
+    void print_answer() const {qDebug() << answer;}
 
     /** Returns QString contained in answer.
      *
      * @return answer
      */
-    const QString get_answer() {return answer;}
+    const QString get_answer() const {return answer;}
 
 private slots:
     /** Slot for saving reply in answer variable
