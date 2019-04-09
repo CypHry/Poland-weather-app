@@ -2,6 +2,8 @@
 
 void weather_data::parse_from_string(QString answer)
 {
+    json_string = answer;
+
     QJsonDocument json = QJsonDocument::fromJson(answer.toUtf8());
     QJsonObject obj = json.object();
     QJsonArray weather_array = obj.value("weather").toArray();

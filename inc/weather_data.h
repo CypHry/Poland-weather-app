@@ -21,6 +21,7 @@ class weather_data : public QObject
     Q_OBJECT
 
 private:
+    QString json_string;
     QString city_name;
     QString date;
     QString hour;
@@ -106,6 +107,12 @@ public:
      * @return snow
      */
     const int& get_snow() const {return snow;}
+
+    /** json string getter
+     *
+     * @return json_string
+     */
+    const QString& get_json_string() const {return json_string;}
 
 public slots:
     /** Parsing data from QString
