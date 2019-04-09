@@ -1,17 +1,20 @@
 #include "weather_data_caller.h"
 
-weather_data_caller::weather_data_caller() : QObject()
+weather_data_caller::weather_data_caller(weather_data* data_container) : QObject()
 {
+    QObject::connect(this, SIGNAL(answer_changed(QString)), data_container, SLOT(parse_from_string(QString)));
     QObject::connect(&manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(manager_finished(QNetworkReply*)));
 }
 
-weather_data_caller::weather_data_caller(const QUrl& url) : QObject(), request(url)
+weather_data_caller::weather_data_caller(const QUrl& url, weather_data* data_container) : QObject(), request(url)
 {
+    QObject::connect(this, SIGNAL(answer_changed(QString)), data_container, SLOT(parse_from_string(QString)));
     QObject::connect(&manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(manager_finished(QNetworkReply*)));
 }
 
-weather_data_caller::weather_data_caller(const CITY city) : QObject()
+weather_data_caller::weather_data_caller(const CITY city, weather_data* data_container) : QObject()
 {
+    QObject::connect(this, SIGNAL(answer_changed(QString)), data_container, SLOT(parse_from_string(QString)));
     QObject::connect(&manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(manager_finished(QNetworkReply*)));
 
     switch(city)
@@ -48,7 +51,16 @@ void weather_data_caller::manager_finished(QNetworkReply *reply)
         return;
     }
 
-    QString answer = reply->readAll();
+    this->answer = reply->readAll();
+    emit answer_changed(answer);
+}
 
-    qDebug() << answer;
+void weather_data_caller::set_request_url(const QUrl& url)
+{
+    request.setUrl(url);
+}
+
+void weather_data_caller::get_data()
+{
+    manager.get(request);
 }
