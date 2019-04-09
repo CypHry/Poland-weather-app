@@ -23,6 +23,9 @@ private:
     int humidity;
     double wind_speed;
     int wind_deg;
+    int clouds;
+    int rain;
+    int snow;
 
 public:
     int save_to_file();

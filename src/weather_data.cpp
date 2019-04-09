@@ -8,6 +8,7 @@ void weather_data::parse_from_string(QString answer)
     QJsonObject weather_obj = weather_array.last().toObject();
     QJsonObject main_obj = obj.value("main").toObject();
     QJsonObject wind_obj = obj.value("wind").toObject();
+    QJsonObject cloud_obj = obj.value("clouds").toObject();
 
     city_name = obj.value("name").toString();
     description = weather_obj.value("description").toString();
@@ -16,6 +17,7 @@ void weather_data::parse_from_string(QString answer)
     humidity = main_obj.value("humidity").toInt();
     wind_deg = wind_obj.value("deg").toInt();
     wind_speed = wind_obj.value("speed").toDouble();
-
-    qDebug() << temp;
+    clouds = cloud_obj.value("all").toInt();
+    rain = obj.value("rain").toInt();
+    snow = obj.value("snow").toInt();
 }

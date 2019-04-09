@@ -20,22 +20,22 @@ weather_data_caller::weather_data_caller(const CITY city, weather_data* data_con
     switch(city)
     {
         case WARSZAWA:
-            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Warszawa&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
+            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Warszawa&units=metric&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
             break;
         case WROCLAW:
-            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Wroclaw&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
+            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Wroclaw&units=metric&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
             break;
         case GDANSK:
-            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Gdansk&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
+            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Gdansk&units=metric&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
             break;
         case KRAKOW:
-            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Krakow&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
+            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Krakow&units=metric&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
             break;
         case KATOWICE:
-            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Katowice&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
+            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Katowice&units=metric&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
             break;
         case POZNAN:
-            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Wroclaw&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
+            request.setUrl(QUrl("https://api.openweathermap.org/data/2.5/weather?q=Wroclaw&units=metric&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
             break;
         default:
             break;
