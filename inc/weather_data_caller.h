@@ -50,7 +50,7 @@ public:
      */
     weather_data_caller(weather_data* data_container);
 
-    /** @brief Constructor
+    /** @brief Constructor with CITY as parameter
      *
      * Connects answer_changed signal with data_container.
      * Connects QNetworkAccessManager's finished signal with manager_finished slot.
@@ -61,7 +61,7 @@ public:
      */
     weather_data_caller(const CITY city, weather_data* data_container);
 
-    /** @brief Constructor
+    /** @brief Constructor with url as parameter
      *
      * Connects answer_changed signal with data_container.
      * Connects QNetworkAccessManager's finished signal with manager_finished slot.
