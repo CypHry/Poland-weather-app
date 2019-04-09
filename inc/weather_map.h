@@ -18,7 +18,13 @@ class weather_map : public QObject
 private:
     QGraphicsScene* scene;
     QGraphicsPixmapItem* map_img;
-    QGraphicsTextItem* temp;
+    QGraphicsTextItem* poznan;
+    QGraphicsTextItem* warszawa;
+    QGraphicsTextItem* wroclaw;
+    QGraphicsTextItem* krakow;
+    QGraphicsTextItem* gdansk;
+    QGraphicsTextItem* katowice;
+
 
 public:
     weather_map();
