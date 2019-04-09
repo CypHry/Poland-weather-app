@@ -8,7 +8,7 @@
 class weather_MainWindow : protected Ui::MainWindow
 {
 private:
-    weather_map map;
+    weather_map w_map;
 
 public:
     weather_MainWindow(QMainWindow* parent);

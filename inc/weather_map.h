@@ -16,10 +16,13 @@ class weather_map : public QObject
     Q_OBJECT
 
 private:
-    QGraphicsScene scene;
-    QGraphicsPixmapItem map;
-    QGraphicsTextItem temp;
+    QGraphicsScene* scene;
+    QGraphicsPixmapItem* map_img;
+    QGraphicsTextItem* temp;
 
+public:
+    weather_map();
+    QGraphicsScene* get_scene_ptr() {return scene;}
 };
 
 #endif // WEATHER_MAP_H
