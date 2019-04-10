@@ -11,6 +11,9 @@
  * file provides a class used for creating map's graphics scene
  */
 
+/** @brief class represents QGraphicsScene for map of poland
+ *
+ */
 class weather_map : public QObject
 {
     Q_OBJECT
