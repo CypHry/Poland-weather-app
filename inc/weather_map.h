@@ -1,10 +1,13 @@
 #ifndef WEATHER_MAP_H
 #define WEATHER_MAP_H
 
+#include <vector>
+#include <memory>
 #include <QGraphicsScene>
 #include <QGraphicsTextItem>
 #include <QGraphicsPixmapItem>
 #include <QObject>
+#include <city.h>
 
 /**@file weather_map.h
  *
@@ -21,12 +24,7 @@ class weather_map : public QObject
 private:
     QGraphicsScene* scene;
     QGraphicsPixmapItem* map_img;
-    QGraphicsTextItem* poznan;
-    QGraphicsTextItem* warszawa;
-    QGraphicsTextItem* wroclaw;
-    QGraphicsTextItem* krakow;
-    QGraphicsTextItem* gdansk;
-    QGraphicsTextItem* katowice;
+    std::vector<std::shared_ptr<city>> cities;
 
 
 public:
