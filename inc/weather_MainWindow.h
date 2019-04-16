@@ -4,10 +4,14 @@
 #include "ui_pogoda.h"
 #include "weather_map.h"
 
+/** @file weather_data.h
+ *  @brief File contains  declaration of weather_data class.
+ */
 
-class weather_MainWindow : protected Ui::MainWindow
+class weather_MainWindow
 {
 private:
+    Ui::MainWindow Ui;
     weather_map w_map;
 
 public:

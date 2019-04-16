@@ -6,9 +6,9 @@ weather_map::weather_map()
     QPixmap pix("img/map_of_poland.png");
     map_img = scene->addPixmap(pix);
 
-    for(int i = 0; i < 6; i++) // number of cities in CITY enum
+    for(int i = 0; i < NUMBER_OF_CITIES; i++)
     {
-        std::shared_ptr <city> temp = std::make_shared<city>(static_cast<CITY>(i), scene);
+        std::shared_ptr <city> temp = std::make_shared<city>(static_cast<CITY_ID>(i), scene);
         cities.push_back(temp);
     }
 

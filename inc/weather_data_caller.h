@@ -13,9 +13,9 @@
 
 
 
-/** @brief enumerated type for cities used in application
+/** @brief enumerated type for cities currently used in application
  */
-enum CITY {
+enum CITY_ID {
     WARSZAWA,
     WROCLAW,
     POZNAN,
@@ -23,6 +23,8 @@ enum CITY {
     KATOWICE,
     GDANSK
 };
+
+#define NUMBER_OF_CITIES 6 /// number of cities currently used in application
 
 /** @brief class used for creating url requests
  *
@@ -50,7 +52,7 @@ public:
      */
     weather_data_caller(weather_data* data_container);
 
-    /** @brief Constructor with CITY as parameter
+    /** @brief Constructor witstd::vector<QGraphicsTextItem*> text_data_vect;h CITY as parameter
      *
      * Connects answer_changed signal with data_container.
      * Connects QNetworkAccessManager's finished signal with manager_finished slot.
@@ -59,7 +61,7 @@ public:
      * @param city - specifies which url to set
      * @param data_container
      */
-    weather_data_caller(const CITY city, weather_data* data_container);
+    weather_data_caller(const CITY_ID city, weather_data* data_container);
 
     /** @brief Constructor with url as parameter
      *

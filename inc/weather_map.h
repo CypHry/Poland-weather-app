@@ -28,7 +28,16 @@ private:
 
 
 public:
+    /** weather_map constructor
+     *
+     *  Sets map img and creates cities.
+     */
     weather_map();
+
+    /** Scene pointer getter
+     *
+     * @return scene
+     */
     QGraphicsScene* get_scene_ptr() {return scene;}
 };
 

@@ -1,6 +1,6 @@
 #include <city.h>
 
-city::city(const CITY city_id, QGraphicsScene* scene)
+city::city(const CITY_ID city_id, QGraphicsScene* scene)
 {
     this->city_id = city_id;
     data = new weather_data(this);

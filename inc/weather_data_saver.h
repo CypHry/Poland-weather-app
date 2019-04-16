@@ -16,12 +16,31 @@ class weather_data_saver : public QObject
     Q_OBJECT
 
 public:
+    /** Saving QString to file.
+     *
+     * Creates QFile with filename and saves json string from data to it.
+     *
+     * @param data
+     * @param filename
+     * @retval 0 - saved successfully
+     * @retval -1 - error occurred
+     */
     int save_data_to_file(const weather_data& data, const QString& filename);
+
+    /** Saving QString to file.
+     *
+     * Gets json string from data and saves it to file.
+     *
+     * @param data
+     * @param file
+     * @retval 0 - saved successfully
+     * @retval -1 - error occurred
+     */
     int save_data_to_file(const weather_data& data, QFile& file);
 
     /** Saving QString to file.
      *
-     * Creates QFile with filename and writes string to it.
+     * Creates QFile with filename and saves string to it.
      *
      * @param string
      * @param filename
@@ -32,7 +51,7 @@ public:
 
     /** Saving QString to file.
      *
-     * @param string - string to be saved
+     * @param string
      * @param file
      * @retval 0 - saved successfully
      * @retval -1 - error occurred

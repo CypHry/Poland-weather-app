@@ -37,6 +37,12 @@ private:
 
 public:
 
+    /** weather_data constructor
+     *
+     * connects data_parsed signal with parent's set_weather_text slot
+     *
+     * @param parent
+     */
     weather_data(QObject* parent);
 
 
@@ -119,12 +125,15 @@ public:
     const QString& get_json_string() const {return json_string;}
 
 public slots:
-    /** Parsing data from QString
-     *
+    /** Parsing data from QString.
+     *  Emits data_parsed signal.
      */
     void parse_from_string(QString answer);
 
 signals:
+    /** Signal emitted after data parsing
+     *
+     */
     void data_parsed();
 
 };

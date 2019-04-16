@@ -14,19 +14,18 @@ class city : public QObject
     Q_OBJECT
 
 private:
-    CITY city_id;
+    CITY_ID city_id;
     weather_data* data;
-    std::vector<QGraphicsTextItem*> text_data;
     QGraphicsTextItem* weather_text;
     QGraphicsTextItem* city_name;
     weather_data_caller* data_caller;
 
 
 public:
-    city(const CITY city_id, QGraphicsScene* scene);
+    city(const CITY_ID city_id, QGraphicsScene* scene);
 
     const QGraphicsTextItem* get_city_name() const {return city_name;}
-    CITY get_city_id() const {return city_id;}
+    CITY_ID get_city_id() const {return city_id;}
 
 public slots:
     void set_weather_text();

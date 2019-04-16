@@ -12,7 +12,7 @@ weather_data_caller::weather_data_caller(const QUrl& url, weather_data* data_con
     QObject::connect(&manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(manager_finished(QNetworkReply*)));
 }
 
-weather_data_caller::weather_data_caller(const CITY city, weather_data* data_container) : QObject()
+weather_data_caller::weather_data_caller(const CITY_ID city, weather_data* data_container) : QObject()
 {
     QObject::connect(this, SIGNAL(answer_changed(QString)), data_container, SLOT(parse_from_string(QString)));
     QObject::connect(&manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(manager_finished(QNetworkReply*)));
