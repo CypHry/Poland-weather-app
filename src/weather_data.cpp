@@ -22,4 +22,12 @@ void weather_data::parse_from_string(QString answer)
     clouds = cloud_obj.value("all").toInt();
     rain = obj.value("rain").toInt();
     snow = obj.value("snow").toInt();
+
+    emit data_parsed();
 }
+
+weather_data::weather_data(QObject* parent)
+{
+    QObject::connect(this, SIGNAL(data_parsed()), parent, SLOT(set_weather_text()));
+}
+

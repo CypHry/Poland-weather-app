@@ -7,6 +7,7 @@
 #include <weather_data.h>
 #include <weather_data_caller.h>
 #include <weather_data_reader.h>
+#include <vector>
 
 class city : public QObject
 {
@@ -15,7 +16,8 @@ class city : public QObject
 private:
     CITY city_id;
     weather_data* data;
-    // chart data
+    std::vector<QGraphicsTextItem*> text_data;
+    QGraphicsTextItem* weather_text;
     QGraphicsTextItem* city_name;
     weather_data_caller* data_caller;
 
@@ -25,6 +27,10 @@ public:
 
     const QGraphicsTextItem* get_city_name() const {return city_name;}
     CITY get_city_id() const {return city_id;}
+
+public slots:
+    void set_weather_text();
+
 };
 
 

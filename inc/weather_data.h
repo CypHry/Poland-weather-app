@@ -36,6 +36,10 @@ private:
     int snow;
 
 public:
+
+    weather_data(QObject* parent);
+
+
     /** city_name getter
      *
      * @return city_name
@@ -119,6 +123,9 @@ public slots:
      *
      */
     void parse_from_string(QString answer);
+
+signals:
+    void data_parsed();
 
 };
 
