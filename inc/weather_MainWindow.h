@@ -8,7 +8,7 @@
  *  @brief File contains declaration of weather_MainWindow class.
  */
 
-/** App's main window class
+/** @class App's main window class
  *
  */
 class weather_MainWindow
@@ -18,7 +18,7 @@ private:
     weather_map w_map;
 
 public:
-    /**Constructor
+    /**@brief Constructor
      *
      * Sets Ui and graphics scene.
      *

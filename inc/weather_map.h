@@ -11,10 +11,10 @@
 
 /**@file weather_map.h
  *
- * file provides a class used for creating map's graphics scene
+ * File provides a class used for creating map's graphics scene.
  */
 
-/** @brief class represents QGraphicsScene for map of poland
+/** @brief Class represents QGraphicsScene for map of poland
  *
  */
 class weather_map : public QObject
@@ -28,13 +28,13 @@ private:
 
 
 public:
-    /** weather_map constructor
+    /** @brief weather_map constructor
      *
      *  Sets map img and creates cities.
      */
     weather_map();
 
-    /** Scene pointer getter
+    /** @brief scene pointer getter
      *
      * @return scene
      */

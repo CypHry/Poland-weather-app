@@ -8,29 +8,15 @@
 /** @file weather_data_reader.h
  *  @brief File contains  declaration of weather_data_reader class.
  */
+
+/**@class Class used from reading weather data from files.
+ *
+ */
 class weather_data_reader : public QObject
 {
     Q_OBJECT
 
 public:
-    /** Reads QString from file.
-     *
-     * @param string
-     * @param filename
-     * @retval 0 - read successfully
-     * @retval -1 - error occurred
-     */
-    int read_json_string_from_file(QString& string, const QString& filename);
-
-    /** Reads QString from file.
-     *
-     * @param string
-     * @param file
-     * @retval 0 - read successfully
-     * @retval -1 - error occurred
-     */
-    int read_json_string_from_file(QString& string, QFile& file);
-
     /** Reads QString from file and parse to weather_data.
      *
      * @param data

@@ -12,8 +12,7 @@
  */
 
 
-
-/** @brief enumerated type for cities currently used in application
+/** @brief Enumerated type for cities currently used in application.
  */
 enum CITY_ID {
     WARSZAWA,
@@ -24,12 +23,11 @@ enum CITY_ID {
     GDANSK
 };
 
-#define NUMBER_OF_CITIES 6 /// number of cities currently used in application
+#define NUMBER_OF_CITIES 6 /// Number of cities currently used in application.
 
-/** @brief class used for creating url requests
+/** @brief Class used for creating and sending url requests.
  *
  */
-
 class weather_data_caller : public QObject
 {
 
@@ -74,7 +72,7 @@ public:
      */
     weather_data_caller(const QUrl& url, weather_data* data_container);
 
-    /** Sets new request's url
+    /** @brief Sets new request's url
      *
      * @param url - new request's url
      */
@@ -87,13 +85,14 @@ public:
      */
     void get_data();
 
-    /** Prints answer to the stream.
+    /** @brief Prints answer to the standard output stream.
      *
      */
     void print_answer() const {qDebug() << answer;}
 
-    /** Returns QString contained in answer.
+    /** @brief answer getter.
      *
+     * Returns URL request's answer.
      * @return answer
      */
     const QString get_answer() const {return answer;}
