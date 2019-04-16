@@ -4,10 +4,13 @@
 #include "ui_pogoda.h"
 #include "weather_map.h"
 
-/** @file weather_data.h
- *  @brief File contains  declaration of weather_data class.
+/** @file weather_MainWindow.h
+ *  @brief File contains declaration of weather_MainWindow class.
  */
 
+/** App's main window class
+ *
+ */
 class weather_MainWindow
 {
 private:
@@ -15,6 +18,12 @@ private:
     weather_map w_map;
 
 public:
+    /**Constructor
+     *
+     * Sets Ui and graphics scene.
+     *
+     * @param parent
+     */
     weather_MainWindow(QMainWindow* parent);
 };
 

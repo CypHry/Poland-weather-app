@@ -9,6 +9,14 @@
 #include <weather_data_reader.h>
 #include <vector>
 
+
+/** @file weather_data.h
+ *  @brief File contains  declaration of city class.
+ */
+
+/**@brief class used for storing weather data and QGraphicsItems for specific city
+ *
+ */
 class city : public QObject
 {
     Q_OBJECT
@@ -22,12 +30,19 @@ private:
 
 
 public:
+    /** Constructor
+     *
+     * Gets data for specific city and sets city_name item.
+     *
+     * @param city_id
+     * @param scene
+     */
     city(const CITY_ID city_id, QGraphicsScene* scene);
 
-    const QGraphicsTextItem* get_city_name() const {return city_name;}
-    CITY_ID get_city_id() const {return city_id;}
-
 public slots:
+    /**Slot for setting weather_text on main map scene
+     *
+     */
     void set_weather_text();
 
 };
