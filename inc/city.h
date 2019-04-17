@@ -39,6 +39,11 @@ public:
      */
     city(const CITY_ID city_id, QGraphicsScene* scene);
 
+    /** @brief Destructor
+     *
+     */
+    ~city() {delete data; delete data_caller; delete weather_text; delete city_name;}
+
 public slots:
     /** @brief Sets current weather_text on main map QGraphicsScene
      *

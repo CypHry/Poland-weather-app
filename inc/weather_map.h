@@ -39,6 +39,11 @@ public:
      * @return scene
      */
     QGraphicsScene* get_scene_ptr() {return scene;}
+
+    /**@brief Destructor
+     *
+     */
+    ~weather_map(){cities.clear(); delete scene;}
 };
 
 #endif // WEATHER_MAP_H
