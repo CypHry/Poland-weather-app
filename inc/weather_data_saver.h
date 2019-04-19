@@ -22,7 +22,7 @@ class weather_data_saver : public QObject
     Q_OBJECT
 
 public:
-    /** @biref Saving weather data (as weather_data class) to file specified by passed filename.
+    /** @brief Saving weather data (as weather_data class) to file specified by passed filename.
      *
      * Creates QFile with filename and saves json string from data to it.
      *
