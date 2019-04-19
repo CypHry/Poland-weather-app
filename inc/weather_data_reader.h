@@ -9,7 +9,8 @@
  *  @brief File contains  declaration of weather_data_reader class.
  */
 
-/**@class Class used from reading weather data from files.
+/**@class weather_data_reader
+ * @brief Class used from reading weather data from files.
  *
  */
 class weather_data_reader : public QObject

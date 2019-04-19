@@ -10,11 +10,11 @@
 #include <city.h>
 
 /**@file weather_map.h
- *
- * File provides a class used for creating map's graphics scene.
+ * @brief File provides a class used for creating map's graphics scene.
  */
 
-/** @brief Class represents QGraphicsScene for map of poland
+/**@class weather_map
+ * @brief Class represents QGraphicsScene for map of poland
  *
  */
 class weather_map : public QObject

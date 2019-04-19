@@ -25,7 +25,8 @@ enum CITY_ID {
 
 #define NUMBER_OF_CITIES 6 /// Number of cities currently used in application.
 
-/** @brief Class used for creating and sending url requests.
+/**@class weather_data_caller
+ * @brief Class used for creating and sending url requests.
  *
  */
 class weather_data_caller : public QObject

@@ -9,7 +9,8 @@
  *  @brief File contains declaration of weather_MainWindow class.
  */
 
-/** @class App's main window class
+/** @class weather_MainWindow
+ *  @brief App's main window class
  *
  */
 class weather_MainWindow : public QMainWindow

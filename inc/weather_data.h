@@ -13,8 +13,8 @@
  *  @brief File contains  declaration of weather_data class.
  */
 
-/**@class Class used for parsing and storing weather data as well as json string - URL request's answer.
- *
+/**@class weather_data
+ * @brief Class used for parsing and storing weather data as well as json string - URL request's answer.
  */
 class weather_data : public QObject
 {
@@ -160,7 +160,7 @@ public slots:
     void parse_from_string(QString answer);
 
 signals:
-    /** @biref Signal emitted after data parsing
+    /** @brief Signal emitted after data parsing
      *
      */
     void data_parsed();

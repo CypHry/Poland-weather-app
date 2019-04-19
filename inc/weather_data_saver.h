@@ -8,7 +8,8 @@
 #include "weather_data.h"
 #include <QFile>
 
-/**@class class used for saving weather data to file
+/**@class weather_data_saver
+ * @brief Class used for saving weather data to file.
  *
  */
 class weather_data_saver : public QObject
