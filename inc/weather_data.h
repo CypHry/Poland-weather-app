@@ -11,29 +11,33 @@
 
 /** @file weather_data.h
  *  @brief File contains  declaration of weather_data class.
+ *
+ *  Class weather_data parses weather data from json object (passed as QString) and saves them in adequate records.
  */
 
 /**@class weather_data
  * @brief Class used for parsing and storing weather data as well as json string - URL request's answer.
+ *
+ * Class parses weather data from json object (passed as QString) and saves them in adequate records.
  */
 class weather_data : public QObject
 {
     Q_OBJECT
 
 private:
-    QString json_string;
-    QString city_name;
-    QString date;
-    QString hour;
-    QString description;
-    double temp;
-    int pressure;
-    int humidity;
-    double wind_speed;
-    int wind_deg;
-    int clouds;
-    int rain;
-    int snow;
+    QString json_string; ///< Weather data in form of json string.
+    QString city_name; ///< Name of the city
+    QString date; ///< Weather date
+    QString hour; ///< Weather hour
+    QString description; ///< Short description of weather
+    double temp; ///< Temperature in Celsius
+    int pressure; ///< Pressure in hPa
+    int humidity; ///< Humidity in %
+    double wind_speed; ///< Wind speed in m/s
+    int wind_deg; ///< Wind direction as meteorological degrees
+    int clouds; ///< Cloudiness in %
+    int rain; ///< Rain volume from last hour in mm
+    int snow; ///< Snow volume from last hour in mm
 
 public:
 
@@ -152,15 +156,15 @@ public:
     const QString& get_json_string() const {return json_string;}
 
 public slots:
-    /** @brief Parsing data from QString.
+    /** @brief Parsing data from QString (weather data in form of json string).
      *  After data from answer is parsed emits data_parsed signal.
      *
-     *  @param answer - URL request's answer.
+     *  @param answer - URL weather data server's answer.
      */
     void parse_from_string(QString answer);
 
 signals:
-    /** @brief Signal emitted after data parsing
+    /** @brief Signal emitted after finished data parsing.
      *
      */
     void data_parsed();
