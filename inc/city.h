@@ -1,5 +1,5 @@
-#ifndef POGODA_CITY_H
-#define POGODA_CITY_H
+#ifndef CITY_H
+#define CITY_H
 
 #include <QGraphicsTextItem>
 #include <QObject>
@@ -31,10 +31,10 @@ class city : public QObject
 
 private:
     CITY_ID city_id; ///< City ID given as a parameter in constructor. Specifies the created city.
-    weather_data* data; ///< pointer to container for all the weather data
-    QGraphicsTextItem* weather_text; ///< pointer to text that is currently displayed on map scene under the city name
-    QGraphicsTextItem* city_name; ///< pointer to city name displayed on map scene
-    weather_data_caller* data_caller; // do I need this?
+    weather_data* data; ///< Pointer to container for all the weather data
+    QGraphicsTextItem* weather_text; ///< Pointer to text that is currently displayed on map scene under the city name
+    QGraphicsTextItem* city_name; ///< Pointer to city name displayed on map scene
+    weather_data_caller* data_caller; ///< Pointer to data_caller class used for getting json from weather server
 
 
 public:
@@ -63,4 +63,4 @@ public slots:
 };
 
 
-#endif //POGODA_CITY_H
+#endif //CITY_H
