@@ -5,7 +5,8 @@
 #include <QDebug>
 #include <QtNetwork>
 #include <QObject>
-#include <weather_data.h>
+#include "weather_data.h"
+#include "weather_forecast_data.h"
 
 /** @file weather_data_caller.h
  *  @brief File contains  declaration of weather_data_caller class and CITY_ID enum type.
@@ -79,6 +80,37 @@ public:
      * @param data_container - place where weather data will be contained
      */
     weather_data_caller(const QUrl& url, weather_data* data_container);
+
+    /** @brief Constructor
+     *
+     * Connects answer_changed signal with data_container.
+     * Connects QNetworkAccessManager's finished signal with manager_finished slot.
+     *
+     * @param data_container
+     */
+    weather_data_caller(weather_forecast_data* data_container);
+
+    /** @brief Constructor witstd::vector<QGraphicsTextItem*> text_data_vect;h CITY as parameter
+     *
+     * Connects answer_changed signal with data_container.
+     * Connects QNetworkAccessManager's finished signal with manager_finished slot.
+     * Sets request's url for city's current weather.
+     *
+     * @param city - specifies which url to set
+     * @param data_container - place where weather data will be contained
+     */
+    weather_data_caller(const CITY_ID city, weather_forecast_data* data_container);
+
+    /** @brief Constructor with url as parameter
+     *
+     * Connects answer_changed signal with data_container.
+     * Connects QNetworkAccessManager's finished signal with manager_finished slot.
+     * Sets request's url as passed url parameter.
+     *
+     * @param url - url address for sending requests
+     * @param data_container - place where weather data will be contained
+     */
+    weather_data_caller(const QUrl& url, weather_forecast_data* data_container);
 
     /** @brief Sets new request's url
      *

@@ -3,6 +3,7 @@
 
 #include "weather_data_saver.h"
 #include "weather_data_caller.h"
+#include "weather_forecast_data.h"
 
 class weather_forecaster : public QObject
 {
@@ -11,7 +12,7 @@ class weather_forecaster : public QObject
 private:
     weather_data_saver* saver;
     weather_data_caller* caller;
-    weather_data* data; // change to weather forecast data!
+    weather_forecast_data* data; // change to weather forecast data!
 public:
     weather_forecaster();
     void update();
