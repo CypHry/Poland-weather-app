@@ -22,7 +22,7 @@ private:
 public:
     /**@brief Constructor
      *
-     * Sets Ui and graphics scene.
+     * Sets Ui and graphics scene.Connects date and time edits from different tabs (map tab and chart tab).
      *
      * @param parent
      */
