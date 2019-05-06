@@ -14,7 +14,7 @@ private:
     weather_data* data;
 public:
     weather_forecaster();
-    void forecast_update();
+    void update();
 
 public slots:
     void save_data();
