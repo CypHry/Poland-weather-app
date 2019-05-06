@@ -35,6 +35,9 @@ public:
     */
     const std::vector<QString>& get_json_strings() const {return json_strings;}
 
+
+    QString test_string;
+
 public slots:
     /** @brief Parsing data from QString (weather data in form of json strings).
      *  After data from answer is parsed emits data_parsed signal.

@@ -10,10 +10,11 @@ weather_forecaster::weather_forecaster()
 
 void weather_forecaster::save_data()
 {
-    return;
+    saver->save_json_string_to_file(data->test_string, QString("weather_data/test.txt"));
 }
 
 void weather_forecaster::update()
 {
-    return;
+    caller->set_request_url(QUrl("https://api.openweathermap.org/data/2.5/forecast?q=Wroclaw&units=metric&appid=63fe817b1ae0e5f3a6986eeecad1eb2d"));
+    caller->get_data();
 }

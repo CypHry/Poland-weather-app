@@ -9,6 +9,7 @@ weather_forecast_data::weather_forecast_data(QObject* parent)
 
 void weather_forecast_data::parse_from_string(QString answer)
 {
+    test_string = answer;
     emit data_parsed();
 }
 
