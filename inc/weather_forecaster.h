@@ -11,7 +11,7 @@ class weather_forecaster : public QObject
 private:
     weather_data_saver* saver;
     weather_data_caller* caller;
-    weather_data* data;
+    weather_data* data; // change to weather forecast data!
 public:
     weather_forecaster();
     void update();
