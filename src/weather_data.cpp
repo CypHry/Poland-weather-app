@@ -29,5 +29,5 @@ void weather_data::parse_from_string(QString answer)
 weather_data::weather_data(QObject* parent)
 {
     QObject::connect(this, SIGNAL(data_parsed()), parent, SLOT(set_weather_text()));
+    QObject::connect(this, SIGNAL(data_parsed()), parent, SLOT(save_data()));
 }
-

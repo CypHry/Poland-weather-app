@@ -40,13 +40,6 @@ private:
     int snow; ///< Snow volume from last hour in mm
 
 public:
-    /** @brief Default constructor
-     *
-     * Does nothing. Used for saving forecast weather.
-     * Data parsed signal should be connected with save_data slot in weather_data_saver class.
-     */
-    weather_data() {}
-
     /** @brief Constructor
      *
      * Connects data_parsed signal with parent's set_weather_text slot.
