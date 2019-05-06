@@ -13,6 +13,6 @@ weather_forecaster::weather_forecaster()
 
 void weather_forecaster::save_data()
 {
-    qDebug() << data->get_json_string();
-    saver->save_data_to_file(data, "test");
+    if(saver->save_json_string_to_file(data->get_json_string(), QString("weather_data/test.txt")))
+        qDebug() << QString("something went wrong with saving data (forecaster)");
 }
