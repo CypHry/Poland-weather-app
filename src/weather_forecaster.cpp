@@ -10,7 +10,7 @@ weather_forecaster::weather_forecaster()
 
 void weather_forecaster::save_data()
 {
-    saver->save_json_string_to_file(data->test_string, QString("weather_data/test.txt"));
+    return;
 }
 
 void weather_forecaster::update()

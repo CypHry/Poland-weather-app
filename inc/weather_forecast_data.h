@@ -20,14 +20,14 @@
 /**@class weather_data
  * @brief Class used for parsing and storing weather forecast data as json string.
  *
- * Class parses weather data from json object (passed as QString) and saves them in std::vector<QString>.
+ * Class parses weather data from json object (passed as QString) and saves them in std::vector<std::shared_ptr<QString>>.
  */
 class weather_forecast_data : public QObject
 {
     Q_OBJECT
 
 private:
-    std::vector<QString> json_strings; ///< Weather data in form of json strings.
+    std::vector<std::shared_ptr<QString>> json_strings; ///< Weather data in form of json strings.
 
 public:
     /** @brief Constructor
@@ -40,14 +40,11 @@ public:
 
     /** @brief json string getter
     *
-    * Returns json_string - URL request's answer.
+    * Returns json_strings - URL request's answer as vector of shared_ptr<QString>.
     *
-    * @return json_string
+    * @return json_strings
     */
-    const std::vector<QString>& get_json_strings() const {return json_strings;}
-
-
-    QString test_string; //this is test record, to be deleted
+    const std::vector<std::shared_ptr<QString>>& get_json_strings() const {return json_strings;}
 
 public slots:
     /** @brief Parsing data from QString (weather data in form of json strings).
