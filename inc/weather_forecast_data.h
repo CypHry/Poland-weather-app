@@ -28,6 +28,8 @@ class weather_forecast_data : public QObject
 
 private:
     std::vector<std::shared_ptr<QString>> json_strings; ///< Weather data in form of json strings.
+    std::vector<std::shared_ptr<QString>> dates; ///< Forecast weather date
+    QString city; ///< Name of the currently parsed city
 
 public:
     /** @brief Constructor
@@ -45,6 +47,9 @@ public:
     * @return json_strings
     */
     const std::vector<std::shared_ptr<QString>>& get_json_strings() const {return json_strings;}
+    const std::vector<std::shared_ptr<QString>>& get_dates() const {return dates;}
+
+    QString get_city() const {return city;}
 
 public slots:
     /** @brief Parsing data from QString (weather data in form of json strings).

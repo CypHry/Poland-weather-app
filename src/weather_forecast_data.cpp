@@ -11,6 +11,7 @@ void weather_forecast_data::parse_from_string(QString answer)
 {
     QJsonDocument json = QJsonDocument::fromJson(answer.toUtf8());
     QJsonObject obj = json.object();
+    city = obj.value("city").toObject().value("name").toString();
     QJsonArray array = obj.value("list").toArray();
     QByteArray byte_array;
 
@@ -19,8 +20,8 @@ void weather_forecast_data::parse_from_string(QString answer)
     {
         doc.setObject(array.at(i).toObject());
         byte_array = doc.toJson(QJsonDocument::Compact);
-        std::shared_ptr<QString> temp = std::make_shared<QString>(QLatin1String(byte_array));
-        json_strings.push_back(temp);
+        json_strings.push_back(std::make_shared<QString>(QLatin1String(byte_array)));
+        dates.push_back(std::make_shared<QString>(array.at(i).toObject().value("dt_txt").toString()));
     }
 
     emit data_parsed();
