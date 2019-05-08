@@ -28,7 +28,6 @@ private:
     QString json_string; ///< Weather data in form of json string.
     QString city_name; ///< Name of the city
     QString date; ///< Weather date
-    QString hour; ///< Weather hour
     QString description; ///< Short description of weather
     double temp; ///< Temperature in Celsius
     int pressure; ///< Pressure in hPa
@@ -55,20 +54,14 @@ public:
      * @return city_name
      */
     const QString& get_city_name() const {return city_name;}
+    void set_city_name(const QString new_city_name) {city_name = new_city_name;}
 
     /** @brief date getter
      *
-     * Returns date of stored weather.
+     * Returns date and hour of stored weather.
      * @return date
      */
     const QString& get_date() const {return date;}
-
-    /** @brief hour getter
-     *
-     *  Returns hour of stored weather.
-     * @return hour
-     */
-    const QString& get_hour() const {return hour;}
 
     /** @brief description getter
      *

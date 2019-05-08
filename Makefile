@@ -6,7 +6,8 @@ PODSTAWIENIA=OBJECTS_DIR=${KATALOG_OBJ} INCLUDEPATH=inc\
 			QMAKE_CXXFLAGS=-std=c++11 MOC_DIR=${KATALOG_MOC}\
 			HEADERS+=../inc/weather_data.h HEADERS+=../inc/weather_data_saver.h\
 			HEADERS+=../inc/weather_map.h HEADERS+=../inc/city.h\
-			HEADERS+=../inc/weather_forecaster.h HEADERS+=../inc/weather_forecast_data.h
+			HEADERS+=../inc/weather_forecaster.h HEADERS+=../inc/weather_forecast_data.h\
+			HEADERS+=../inc/weather_MainWindow.h
 KATALOG_OBJ=./obj
 KATALOG_MOC=./moc
 

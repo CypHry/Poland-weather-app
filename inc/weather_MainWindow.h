@@ -15,9 +15,11 @@
  */
 class weather_MainWindow : public QMainWindow
 {
+    Q_OBJECT
+
 private:
-    Ui::MainWindow Ui;
-    weather_map w_map;
+    Ui::MainWindow Ui; ///< Ui class created by QtDesigner
+    weather_map* w_map; ///< weather map record
 
 public:
     /**@brief Constructor
@@ -27,6 +29,8 @@ public:
      * @param parent
      */
     weather_MainWindow(QMainWindow* parent);
+
+    ~weather_MainWindow(){delete w_map;}
 };
 
 #endif // WEATHER_MAINWINDOW_H

@@ -4,6 +4,7 @@
 #include <QGraphicsTextItem>
 #include <QObject>
 #include <QGraphicsScene>
+#include <QFileInfo>
 #include <weather_data.h>
 #include <weather_data_caller.h>
 #include <weather_data_reader.h>
@@ -46,6 +47,8 @@ public:
      * @param scene - QGraphicsScene (map of Poland) where texts are going to be displayed
      */
     city(const CITY_ID city_id, QGraphicsScene* scene);
+
+    void update(const QDate new_date, const QTime new_time);
 
     /** @brief Destructor
      *

@@ -17,10 +17,10 @@
  *  and saves them in std::vector<QString>.
  */
 
-/**@class weather_data
+/**@class weather_forecast_data
  * @brief Class used for parsing and storing weather forecast data as json string.
  *
- * Class parses weather data from json object (passed as QString) and saves them in std::vector<std::shared_ptr<QString>>.
+ * Class parses weather data from json objects (passed as QString) and saves them in std::vector<std::shared_ptr<QString>>.
  */
 class weather_forecast_data : public QObject
 {

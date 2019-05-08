@@ -61,3 +61,33 @@ void city::set_weather_text()
             break;
     }
 }
+
+void city::update(const QDate new_date, const QTime new_time)
+{
+    weather_data_reader reader;
+    QString filename = "weather_data/";
+    QString city_name = data->get_city_name();
+    filename.append(city_name);
+    if(filename.length() == 13)
+        return;
+
+    QString temp = ":00:00";
+    QString date = new_date.toString(Qt::ISODate);
+    QString time = new_time.toString(Qt::ISODate);
+    time.replace(2, 6, temp);
+    filename.append(" ");
+    filename.append(date);
+    filename.append(" ");
+    filename.append(time);
+
+    QFileInfo file(filename);
+    if(file.exists() && file.isFile())
+    {
+        reader.read_data_from_file(data, filename);
+        data->set_city_name(city_name);
+    }
+    else
+    {
+        qDebug() << "Data file does not exist! (city::update)";
+    }
+}

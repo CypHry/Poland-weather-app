@@ -12,4 +12,25 @@ weather_map::weather_map()
         cities.push_back(temp);
     }
 
+    currently_used_date = QDate::currentDate();
+    currently_used_time = QTime::currentTime();
+}
+
+
+void weather_map::update_date(QDate new_date)
+{
+    currently_used_date = new_date;
+    for(unsigned int i = 0; i < cities.size(); i++)
+    {
+        cities[i]->update(currently_used_date, currently_used_time);
+    }
+}
+
+void weather_map::update_time(QTime new_time)
+{
+    currently_used_time = new_time;
+    for(unsigned int i = 0; i < cities.size(); i++)
+    {
+        cities[i]->update(currently_used_date, currently_used_time);
+    }
 }

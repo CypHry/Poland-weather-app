@@ -30,7 +30,8 @@ private:
     QGraphicsScene* scene; ///< Scene of all graphics items displayed on the map of poland and the map itself.
     QGraphicsPixmapItem* map_img; ///< Pointer to the map of poland background image.
     std::vector<std::shared_ptr<city>> cities; ///< Vector of all the cities used in the app.
-
+    QDate currently_used_date;
+    QTime currently_used_time;
 
 public:
     /** @brief weather_map constructor
@@ -52,6 +53,10 @@ public:
      * Deletes the main graphics scene.
      */
     ~weather_map(){cities.clear(); delete scene;}
+
+public slots:
+    void update_date(QDate new_date);
+    void update_time(QTime new_time);
 };
 
 #endif // WEATHER_MAP_H
