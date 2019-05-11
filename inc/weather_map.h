@@ -53,12 +53,15 @@ public:
      *
      * Deletes the main graphics scene.
      */
-    ~weather_map(){cities.clear(); delete scene;}
+    ~weather_map(){scene->clearSelection(); cities.clear(); delete scene;}
 
 public slots:
     void update_date(QDate new_date);
     void update_time(QTime new_time);
     void check_selected();
+
+signals:
+    void change_scene(std::shared_ptr<city> selected_city);
 
 };
 
