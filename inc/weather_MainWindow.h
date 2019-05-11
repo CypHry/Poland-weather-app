@@ -30,6 +30,10 @@ public:
      */
     weather_MainWindow(QMainWindow* parent);
 
+    /**@brief Destructor
+     *
+     * Deletes w_map
+     */
     ~weather_MainWindow(){delete w_map;}
 };
 

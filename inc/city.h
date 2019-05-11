@@ -48,6 +48,8 @@ public:
      */
     city(const CITY_ID city_id, QGraphicsScene* scene);
 
+    QGraphicsTextItem* get_city_name_ptr() const {return city_name;}
+
     void update(const QDate new_date, const QTime new_time);
 
     /** @brief Destructor

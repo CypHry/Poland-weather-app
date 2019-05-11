@@ -7,6 +7,7 @@
 #include <QGraphicsTextItem>
 #include <QGraphicsPixmapItem>
 #include <QObject>
+#include <QWidget>
 #include <city.h>
 
 /**@file weather_map.h
@@ -57,6 +58,8 @@ public:
 public slots:
     void update_date(QDate new_date);
     void update_time(QTime new_time);
+    void check_selected();
+
 };
 
 #endif // WEATHER_MAP_H

@@ -14,6 +14,8 @@ weather_map::weather_map()
 
     currently_used_date = QDate::currentDate();
     currently_used_time = QTime::currentTime();
+
+    QObject::connect(scene, SIGNAL(selectionChanged()), this, SLOT(check_selected()));
 }
 
 
@@ -32,5 +34,18 @@ void weather_map::update_time(QTime new_time)
     for(unsigned int i = 0; i < cities.size(); i++)
     {
         cities[i]->update(currently_used_date, currently_used_time);
+    }
+}
+
+void weather_map::check_selected()
+{
+    for(unsigned int i = 0; i < cities.size(); i++)
+    {
+        if(cities[i]->get_city_name_ptr()->isSelected())
+        {
+            qDebug() << cities[i]->get_city_name_ptr()->toPlainText();
+            //emit signal with city class
+            return;
+        }
     }
 }

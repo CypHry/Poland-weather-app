@@ -32,6 +32,8 @@ city::city(const CITY_ID city_id, QGraphicsScene* scene)
             city_name->setPos(270,40);
             break;
     }
+
+    city_name->setFlag(QGraphicsItem::ItemIsSelectable);
     data_caller->get_data();
     weather_text = scene->addText("");
 }
