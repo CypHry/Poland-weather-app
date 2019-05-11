@@ -43,7 +43,6 @@ void weather_map::check_selected()
     {
         if(cities[i]->get_city_name_ptr()->isSelected())
         {
-            qDebug() << cities[i]->get_city_name_ptr()->toPlainText();
             emit change_scene(cities[i]);
             return;
         }
