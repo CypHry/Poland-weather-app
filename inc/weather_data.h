@@ -55,6 +55,12 @@ public:
      */
     const QString& get_city_name() const {return city_name;}
 
+    /**@brief City name setter
+     *
+     * Sets new city name. Used after parsing json without name of the city.
+     *
+     * @param new_city_name
+     */
     void set_city_name(const QString new_city_name) {city_name = new_city_name;}
 
     /** @brief date getter

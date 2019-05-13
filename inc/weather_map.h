@@ -31,8 +31,8 @@ private:
     QGraphicsScene* scene; ///< Scene of all graphics items displayed on the map of poland and the map itself.
     QGraphicsPixmapItem* map_img; ///< Pointer to the map of poland background image.
     std::vector<std::shared_ptr<city>> cities; ///< Vector of all the cities used in the app.
-    QDate currently_used_date;
-    QTime currently_used_time;
+    QDate currently_used_date; ///< Currently used date for displayed weather.
+    QTime currently_used_time; ///< Currently used time for displayed weather.
 
 public:
     /** @brief weather_map constructor

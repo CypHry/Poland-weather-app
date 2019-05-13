@@ -8,6 +8,8 @@
 #include <memory>
 
 
+
+
 class city_info : public QObject
 {
     Q_OBJECT

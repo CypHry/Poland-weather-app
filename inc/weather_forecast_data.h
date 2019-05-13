@@ -47,8 +47,21 @@ public:
     * @return json_strings
     */
     const std::vector<std::shared_ptr<QString>>& get_json_strings() const {return json_strings;}
+
+    /**@brief dates getter
+     *
+     * Returns vector of (forecast weather) dates for parsed data.
+     *
+     * @return dates
+     */
     const std::vector<std::shared_ptr<QString>>& get_dates() const {return dates;}
 
+    /**@brief city getter
+     *
+     * Returns the name of currently parsed city.
+     *
+     * @return city
+     */
     QString get_city() const {return city;}
 
 public slots:

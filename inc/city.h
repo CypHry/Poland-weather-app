@@ -48,10 +48,29 @@ public:
      */
     city(const CITY_ID city_id, QGraphicsScene* scene);
 
+    /**@brief City name getter
+     *
+     * Returns pointer to the city_name.
+     *
+     * @return city_name
+     */
     QGraphicsTextItem* get_city_name_ptr() const {return city_name;}
 
+    /**@brief Data getter
+     *
+     * Returns weather data (as pointer) currently held in the class.
+     *
+     * @return data
+     */
     weather_data* get_weather_data() const {return data;}
 
+    /**@brief Updates data after changing date/timeedit in main window.
+     *
+     * Reads file and parse weather data for new date and new time.
+     *
+     * @param new_date
+     * @param new_time
+     */
     void update(const QDate new_date, const QTime new_time);
 
     /** @brief Destructor

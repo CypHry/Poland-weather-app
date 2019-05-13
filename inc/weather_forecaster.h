@@ -30,11 +30,33 @@ private:
     weather_forecast_data* data; ///< Pointer to forecast_data class used for storing json objects
 
 public:
+    /**@brief Constructor
+     *
+     * Creates new saver, caller and data holder.
+     */
     weather_forecaster();
+
+    /**@brief Update forecast weather data.
+     *
+     * Makes new calls to weather server.
+     * Responds are parsed in weather_forecast_data class and saved with save_data slot.
+     */
     void update();
+
+    /**@brief Data getter
+     *
+     * Returns pointer to forecast weather data holder.
+     *
+     * @return data
+     */
     weather_forecast_data* get_forecast_data_ptr() const {return data;}
 
 public slots:
+    /**@brief Saves parsed data.
+     *
+     * Saves parsed forecast weather data in adequate files.
+     * Connected to data_parsed() signal from weather_forecast_data class.
+     */
     void save_data();
 };
 
