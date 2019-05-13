@@ -22,7 +22,7 @@ private:
 public:
     city_info();
     QGraphicsScene* get_scene_ptr() const {return scene;}
-    void set_data(weather_data* new_data){data = new_data;}
+    void set_data(weather_data* new_data){data = new_data; data->notify_after_data_parsed(this);}
     void set_city_name(QGraphicsTextItem* new_city_name);
     void update_weather_texts();
 
@@ -31,6 +31,7 @@ signals:
 
 public slots:
     void back_selected();
+    void data_parsed();
 
 };
 

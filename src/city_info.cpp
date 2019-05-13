@@ -68,3 +68,8 @@ void city_info::update_weather_texts()
     weather_texts[5]->setPlainText(QString::number(data->get_wind_speed()));
     weather_texts[6]->setPlainText(QString::number(data->get_clouds()));
 }
+
+void city_info::data_parsed()
+{
+    update_weather_texts();
+}

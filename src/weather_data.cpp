@@ -30,3 +30,8 @@ weather_data::weather_data(QObject* parent)
 {
     QObject::connect(this, SIGNAL(data_parsed()), parent, SLOT(set_weather_text()));
 }
+
+void weather_data::notify_after_data_parsed(QObject* obj)
+{
+    QObject::connect(this, SIGNAL(data_parsed()), obj, SLOT(data_parsed()));
+}

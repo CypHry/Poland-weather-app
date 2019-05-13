@@ -54,6 +54,7 @@ public:
      * @return city_name
      */
     const QString& get_city_name() const {return city_name;}
+
     void set_city_name(const QString new_city_name) {city_name = new_city_name;}
 
     /** @brief date getter
@@ -146,6 +147,8 @@ public:
      * @return json_string
      */
     const QString& get_json_string() const {return json_string;}
+
+    void notify_after_data_parsed(QObject* obj);
 
 public slots:
     /** @brief Parsing data from QString (weather data in form of json string).
