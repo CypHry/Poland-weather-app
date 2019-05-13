@@ -4,6 +4,9 @@
 #include <QObject>
 #include <QGraphicsScene>
 #include <QGraphicsTextItem>
+#include <city.h>
+#include <memory>
+
 
 class city_info : public QObject
 {
@@ -13,10 +16,15 @@ private:
     QGraphicsScene* scene;
     std::vector<QGraphicsTextItem*> weather_texts;
     QGraphicsTextItem* back_text;
+    QGraphicsTextItem* city_name;
+    weather_data* data;
 
 public:
     city_info();
     QGraphicsScene* get_scene_ptr() const {return scene;}
+    void set_data(weather_data* new_data){data = new_data;}
+    void set_city_name(QGraphicsTextItem* new_city_name);
+    void update_weather_texts();
 
 signals:
     void change_scene();

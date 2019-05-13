@@ -38,7 +38,6 @@ city::city(const CITY_ID city_id, QGraphicsScene* scene)
     weather_text = scene->addText("");
 }
 
-
 void city::set_weather_text()
 {
     weather_text->setPlainText(QString::number(data->get_temp()));

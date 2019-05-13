@@ -50,6 +50,8 @@ public:
 
     QGraphicsTextItem* get_city_name_ptr() const {return city_name;}
 
+    weather_data* get_weather_data() const {return data;}
+
     void update(const QDate new_date, const QTime new_time);
 
     /** @brief Destructor
