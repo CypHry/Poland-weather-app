@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'pogoda.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.12.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -328,7 +328,7 @@ public:
         QObject::connect(date_edit2, SIGNAL(dateChanged(QDate)), MainWindow, SLOT(update()));
         QObject::connect(time_edit2, SIGNAL(timeChanged(QTime)), MainWindow, SLOT(update()));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
