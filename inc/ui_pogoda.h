@@ -328,7 +328,7 @@ public:
         QObject::connect(date_edit2, SIGNAL(dateChanged(QDate)), MainWindow, SLOT(update()));
         QObject::connect(time_edit2, SIGNAL(timeChanged(QTime)), MainWindow, SLOT(update()));
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
