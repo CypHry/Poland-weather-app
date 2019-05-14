@@ -50,27 +50,21 @@ public:
     QSpacerItem *verticalSpacer_2;
     QWidget *tab_2;
     QGridLayout *gridLayout_2;
-    QGridLayout *gridLayout_13;
-    QLabel *label_2;
-    QSpacerItem *horizontalSpacer_4;
+    QtCharts::QChartView *temperature;
+    QGridLayout *gridLayout_11;
+    QLabel *label_3;
+    QSpacerItem *horizontalSpacer_5;
+    QtCharts::QChartView *humidity;
     QGridLayout *gridLayout_12;
     QLabel *label_4;
     QSpacerItem *horizontalSpacer_6;
-    QtCharts::QChartView *temperature;
-    QtCharts::QChartView *wind_speed;
     QGridLayout *gridLayout_15;
     QComboBox *city_dropdown;
     QDateEdit *date_edit2;
     QSpacerItem *horizontalSpacer_2;
     QTimeEdit *time_edit2;
-    QGridLayout *gridLayout_11;
-    QLabel *label_3;
-    QSpacerItem *horizontalSpacer_5;
     QGridLayout *gridLayout_14;
-    QLabel *label;
-    QSpacerItem *horizontalSpacer_3;
-    QtCharts::QChartView *humidity;
-    QtCharts::QChartView *pressure;
+    QGridLayout *gridLayout_13;
     QSpacerItem *verticalSpacer;
     QGridLayout *gridLayout_8;
     QSpacerItem *horizontalSpacer;
@@ -164,19 +158,29 @@ public:
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         gridLayout_2 = new QGridLayout(tab_2);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        gridLayout_13 = new QGridLayout();
-        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
-        label_2 = new QLabel(tab_2);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        temperature = new QtCharts::QChartView(tab_2);
+        temperature->setObjectName(QString::fromUtf8("temperature"));
 
-        gridLayout_13->addWidget(label_2, 0, 0, 1, 1);
+        gridLayout_2->addWidget(temperature, 1, 0, 1, 1);
 
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        gridLayout_11 = new QGridLayout();
+        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
+        label_3 = new QLabel(tab_2);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        gridLayout_13->addItem(horizontalSpacer_4, 0, 1, 1, 1);
+        gridLayout_11->addWidget(label_3, 0, 0, 1, 1);
+
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_11->addItem(horizontalSpacer_5, 0, 1, 1, 1);
 
 
-        gridLayout_2->addLayout(gridLayout_13, 4, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout_11, 2, 0, 1, 1);
+
+        humidity = new QtCharts::QChartView(tab_2);
+        humidity->setObjectName(QString::fromUtf8("humidity"));
+
+        gridLayout_2->addWidget(humidity, 3, 0, 1, 1);
 
         gridLayout_12 = new QGridLayout();
         gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
@@ -191,16 +195,6 @@ public:
 
 
         gridLayout_2->addLayout(gridLayout_12, 0, 0, 1, 1);
-
-        temperature = new QtCharts::QChartView(tab_2);
-        temperature->setObjectName(QString::fromUtf8("temperature"));
-
-        gridLayout_2->addWidget(temperature, 1, 0, 1, 1);
-
-        wind_speed = new QtCharts::QChartView(tab_2);
-        wind_speed->setObjectName(QString::fromUtf8("wind_speed"));
-
-        gridLayout_2->addWidget(wind_speed, 5, 0, 1, 1);
 
         gridLayout_15 = new QGridLayout();
         gridLayout_15->setObjectName(QString::fromUtf8("gridLayout_15"));
@@ -242,45 +236,17 @@ public:
         gridLayout_15->addWidget(time_edit2, 0, 3, 1, 1);
 
 
-        gridLayout_2->addLayout(gridLayout_15, 8, 0, 1, 1);
-
-        gridLayout_11 = new QGridLayout();
-        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
-        label_3 = new QLabel(tab_2);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        gridLayout_11->addWidget(label_3, 0, 0, 1, 1);
-
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_11->addItem(horizontalSpacer_5, 0, 1, 1, 1);
-
-
-        gridLayout_2->addLayout(gridLayout_11, 2, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout_15, 6, 0, 1, 1);
 
         gridLayout_14 = new QGridLayout();
         gridLayout_14->setObjectName(QString::fromUtf8("gridLayout_14"));
-        label = new QLabel(tab_2);
-        label->setObjectName(QString::fromUtf8("label"));
 
-        gridLayout_14->addWidget(label, 0, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout_14, 5, 0, 1, 1);
 
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        gridLayout_13 = new QGridLayout();
+        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
 
-        gridLayout_14->addItem(horizontalSpacer_3, 0, 1, 1, 1);
-
-
-        gridLayout_2->addLayout(gridLayout_14, 6, 0, 1, 1);
-
-        humidity = new QtCharts::QChartView(tab_2);
-        humidity->setObjectName(QString::fromUtf8("humidity"));
-
-        gridLayout_2->addWidget(humidity, 3, 0, 1, 1);
-
-        pressure = new QtCharts::QChartView(tab_2);
-        pressure->setObjectName(QString::fromUtf8("pressure"));
-
-        gridLayout_2->addWidget(pressure, 7, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout_13, 4, 0, 1, 1);
 
         tabWidget->addTab(tab_2, QString());
 
@@ -342,7 +308,7 @@ public:
         animations_checkBox->setText(QApplication::translate("MainWindow", "animations", nullptr));
         time_edit->setDisplayFormat(QApplication::translate("MainWindow", "HH:00", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "map", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "wind speed", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "humidity", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "temperature", nullptr));
         city_dropdown->setItemText(0, QApplication::translate("MainWindow", "Warszawa", nullptr));
         city_dropdown->setItemText(1, QApplication::translate("MainWindow", "Wroc\305\202aw", nullptr));
@@ -353,8 +319,6 @@ public:
 
         date_edit2->setDisplayFormat(QApplication::translate("MainWindow", "dd/MM", nullptr));
         time_edit2->setDisplayFormat(QApplication::translate("MainWindow", "HH:00", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "humidity", nullptr));
-        label->setText(QApplication::translate("MainWindow", "pressure", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "charts", nullptr));
         exit_button->setText(QApplication::translate("MainWindow", "exit", nullptr));
     } // retranslateUi

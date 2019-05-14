@@ -5,6 +5,8 @@
 #include <QChart>
 #include <QChartView>
 #include <QLineSeries>
+#include <QDebug>
+#include <QDate>
 
 class weather_charts_tab : public QObject
 {
@@ -12,18 +14,22 @@ class weather_charts_tab : public QObject
 
 private:
     QtCharts::QChart* temperature;
-    QtCharts::QChart* pressure;
     QtCharts::QChart* humidity;
-    QtCharts::QChart* wind_speed;
+    QString current_city;
+    QDate current_date;
 
 public:
     weather_charts_tab(QObject* parent  = nullptr);
 
     QtCharts::QChart* get_temperature_chart() const {return temperature;}
-    QtCharts::QChart* get_pressure_chart() const {return pressure;}
     QtCharts::QChart* get_humidity_chart() const {return humidity;}
-    QtCharts::QChart* get_wind_speed_chart() const {return wind_speed;}
 
+private:
+    void set_new_series();
+
+public slots:
+    void update_data(const QString& selected_city);
+    void update_date(QDate new_date);
 
 };
 

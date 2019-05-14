@@ -3,37 +3,44 @@
 weather_charts_tab::weather_charts_tab(QObject* parent) : QObject(parent)
 {
     temperature = new QtCharts::QChart();
-    pressure = new QtCharts::QChart();
     humidity = new QtCharts::QChart();
-    wind_speed = new QtCharts::QChart();
 
-    QtCharts::QLineSeries* temp_series = new QtCharts::QLineSeries();
-
-    temp_series->append(0, 6);
-    temp_series->append(2, 4);
-    temp_series->append(3, 8);
-    temp_series->append(7, 4);
-    temp_series->append(10, 5);
-
-    temperature->addSeries(temp_series);
     temperature->legend()->hide();
+    humidity->legend()->hide();
+}
+
+void weather_charts_tab::update_data(const QString& selected_city)
+{
+    current_city = selected_city;
+    set_new_series();
+}
+
+void weather_charts_tab::update_date(QDate new_date)
+{
+    current_date = new_date;
+    set_new_series();
+}
+
+void weather_charts_tab::set_new_series()
+{
+    QtCharts::QLineSeries* temperature_series = new QtCharts::QLineSeries();
+    QtCharts::QLineSeries* humidity_series = new QtCharts::QLineSeries();
+
+    temperature_series->append(0, 2);
+    temperature_series->append(2, 3);
+    temperature_series->append(4, 2);
+    temperature_series->append(6, 4);
+
+    temperature->removeAllSeries();
+    temperature->addSeries(temperature_series);
     temperature->createDefaultAxes();
 
-    QtCharts::QLineSeries* pressure_series = new QtCharts::QLineSeries();
-    pressure_series->append(0, 6);
-    pressure_series->append(2, 4);
-    pressure_series->append(3, 8);
-    pressure_series->append(7, 4);
-    pressure_series->append(10, 5);
-    pressure->addSeries(pressure_series);
-    pressure->legend()->hide();
-    pressure->createDefaultAxes();
+    humidity_series->append(0, 4);
+    humidity_series->append(2, 6);
+    humidity_series->append(4, 7);
+    humidity_series->append(6, 2);
 
-    //humidity->addSeries(series);
-    humidity->legend()->hide();
+    humidity->removeAllSeries();
+    humidity->addSeries(humidity_series);
     humidity->createDefaultAxes();
-
-    //wind_speed->addSeries(series);
-    wind_speed->legend()->hide();
-    wind_speed->createDefaultAxes();
 }
