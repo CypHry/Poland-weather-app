@@ -38,11 +38,11 @@
 </string>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab">
            <attribute name="title">
-            <string>mapa</string>
+            <string>map</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_5">
             <item row="0" column="0">
@@ -106,7 +106,7 @@
                      <string notr="true">font: 25 10pt &quot;Cantarell Light&quot;;</string>
                     </property>
                     <property name="text">
-                     <string>animacje</string>
+                     <string>animations</string>
                     </property>
                    </widget>
                   </item>
@@ -150,7 +150,7 @@
           </widget>
           <widget class="QWidget" name="tab_2">
            <attribute name="title">
-            <string>wykresy</string>
+            <string>charts</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_2">
             <item row="4" column="0">
@@ -158,7 +158,7 @@
               <item row="0" column="0">
                <widget class="QLabel" name="label_2">
                 <property name="text">
-                 <string>wykres 1</string>
+                 <string>wind speed</string>
                 </property>
                </widget>
               </item>
@@ -182,7 +182,7 @@
               <item row="0" column="0">
                <widget class="QLabel" name="label_4">
                 <property name="text">
-                 <string>wykres 1</string>
+                 <string>temperature</string>
                 </property>
                </widget>
               </item>
@@ -202,10 +202,10 @@
              </layout>
             </item>
             <item row="1" column="0">
-             <widget class="QGraphicsView" name="graphicsView_4"/>
+             <widget class="QtCharts::QChartView" name="graphicsView_4"/>
             </item>
             <item row="5" column="0">
-             <widget class="QGraphicsView" name="graphicsView_2"/>
+             <widget class="QtCharts::QChartView" name="graphicsView_2"/>
             </item>
             <item row="8" column="0">
              <layout class="QGridLayout" name="gridLayout_15">
@@ -321,7 +321,7 @@
               <item row="0" column="0">
                <widget class="QLabel" name="label_3">
                 <property name="text">
-                 <string>wykres 1</string>
+                 <string>humidity</string>
                 </property>
                </widget>
               </item>
@@ -345,7 +345,7 @@
               <item row="0" column="0">
                <widget class="QLabel" name="label">
                 <property name="text">
-                 <string>wykres 1</string>
+                 <string>pressure</string>
                 </property>
                </widget>
               </item>
@@ -365,10 +365,10 @@
              </layout>
             </item>
             <item row="3" column="0">
-             <widget class="QGraphicsView" name="graphicsView_3"/>
+             <widget class="QtCharts::QChartView" name="graphicsView_3"/>
             </item>
             <item row="7" column="0">
-             <widget class="QGraphicsView" name="graphicsView"/>
+             <widget class="QtCharts::QChartView" name="graphicsView"/>
             </item>
            </layout>
           </widget>
@@ -432,6 +432,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QtCharts::QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">QtCharts/QChartView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>

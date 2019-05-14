@@ -5,6 +5,7 @@
 #include "weather_map.h"
 #include <QMainWindow>
 #include "city_info.h"
+#include "weather_charts_tab.h"
 
 /** @file weather_MainWindow.h
  *  @brief File contains declaration of weather_MainWindow class.
@@ -22,6 +23,7 @@ private:
     Ui::MainWindow Ui; ///< Ui class created by QtDesigner
     weather_map* w_map; ///< Weather map scene and it's data
     city_info* c_info; ///< City info scene and it's data
+    weather_charts_tab charts;
 
 public:
     /**@brief Constructor
