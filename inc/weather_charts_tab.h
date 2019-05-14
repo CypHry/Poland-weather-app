@@ -7,6 +7,8 @@
 #include <QLineSeries>
 #include <QDebug>
 #include <QDate>
+#include "weather_data.h"
+#include "weather_data_reader.h"
 
 class weather_charts_tab : public QObject
 {

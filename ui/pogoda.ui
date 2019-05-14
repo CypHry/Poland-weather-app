@@ -219,22 +219,22 @@
                 </property>
                 <item>
                  <property name="text">
-                  <string>Warszawa</string>
+                  <string>Warsaw</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>Wrocław</string>
+                  <string>Wroclaw</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>Poznań</string>
+                  <string>Poznan</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>Gdańsk</string>
+                  <string>Gdansk</string>
                  </property>
                 </item>
                 <item>
@@ -244,7 +244,7 @@
                 </item>
                 <item>
                  <property name="text">
-                  <string>Łódź </string>
+                  <string>Krakow</string>
                  </property>
                 </item>
                </widget>

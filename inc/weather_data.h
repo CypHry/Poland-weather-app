@@ -45,7 +45,7 @@ public:
      *
      * @param parent
      */
-    weather_data(QObject* parent);
+    weather_data(QObject* parent = nullptr);
 
 
     /** @brief city_name getter

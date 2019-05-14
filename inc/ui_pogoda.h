@@ -310,12 +310,12 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "map", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "humidity", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "temperature", nullptr));
-        city_dropdown->setItemText(0, QApplication::translate("MainWindow", "Warszawa", nullptr));
-        city_dropdown->setItemText(1, QApplication::translate("MainWindow", "Wroc\305\202aw", nullptr));
-        city_dropdown->setItemText(2, QApplication::translate("MainWindow", "Pozna\305\204", nullptr));
-        city_dropdown->setItemText(3, QApplication::translate("MainWindow", "Gda\305\204sk", nullptr));
+        city_dropdown->setItemText(0, QApplication::translate("MainWindow", "Warsaw", nullptr));
+        city_dropdown->setItemText(1, QApplication::translate("MainWindow", "Wroclaw", nullptr));
+        city_dropdown->setItemText(2, QApplication::translate("MainWindow", "Poznan", nullptr));
+        city_dropdown->setItemText(3, QApplication::translate("MainWindow", "Gdansk", nullptr));
         city_dropdown->setItemText(4, QApplication::translate("MainWindow", "Katowice", nullptr));
-        city_dropdown->setItemText(5, QApplication::translate("MainWindow", "\305\201\303\263d\305\272 ", nullptr));
+        city_dropdown->setItemText(5, QApplication::translate("MainWindow", "Krakow", nullptr));
 
         date_edit2->setDisplayFormat(QApplication::translate("MainWindow", "dd/MM", nullptr));
         time_edit2->setDisplayFormat(QApplication::translate("MainWindow", "HH:00", nullptr));

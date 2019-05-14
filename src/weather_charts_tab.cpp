@@ -7,6 +7,8 @@ weather_charts_tab::weather_charts_tab(QObject* parent) : QObject(parent)
 
     temperature->legend()->hide();
     humidity->legend()->hide();
+
+    current_city = "Warsaw";
 }
 
 void weather_charts_tab::update_data(const QString& selected_city)
@@ -26,6 +28,11 @@ void weather_charts_tab::set_new_series()
     QtCharts::QLineSeries* temperature_series = new QtCharts::QLineSeries();
     QtCharts::QLineSeries* humidity_series = new QtCharts::QLineSeries();
 
+    weather_data data;
+    weather_data_reader reader;
+    double temperature_value;
+    int humidity_value;
+
     QString hours_str[] = {"00:00:00", "03:00:00", "06:00:00", "09:00:00", "12:00:00", "15:00:00", "18:00:00", "21:00:00"};
     int hours_int[] = {0, 3, 6, 9, 12, 15, 18, 21};
     QString filename = "weather_data/";
@@ -39,9 +46,11 @@ void weather_charts_tab::set_new_series()
     {
         temp_filename = filename;
         temp_filename.append(hours_str[i]);
-        qDebug() << temp_filename;
-        temperature_series->append(hours_int[i], hours_int[i]);
-        humidity_series->append(hours_int[i], hours_int[i]);
+        reader.read_data_from_file(data, temp_filename);
+        temperature_value = data.get_temp();
+        humidity_value = data.get_humidity();
+        temperature_series->append(hours_int[i], temperature_value);
+        humidity_series->append(hours_int[i], humidity_value);
     }
 
     temperature->removeAllSeries();
