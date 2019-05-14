@@ -4,8 +4,13 @@ weather_MainWindow::weather_MainWindow(QMainWindow* parent) : QMainWindow(parent
 {
     w_map = new weather_map();
     c_info = new city_info();
+    charts = new weather_charts_tab(this);
     Ui.setupUi(this);
     Ui.map->setScene(w_map->get_scene_ptr());
+    Ui.temperature->setChart(charts->get_temperature_chart());
+    Ui.pressure->setChart(charts->get_pressure_chart());
+    Ui.humidity->setChart(charts->get_humidity_chart());
+    Ui.wind_speed->setChart(charts->get_wind_speed_chart());
 
     QObject::connect(Ui.date_edit, SIGNAL(dateChanged(QDate)), Ui.date_edit2, SLOT(setDate(QDate)));
     QObject::connect(Ui.date_edit2, SIGNAL(dateChanged(QDate)), Ui.date_edit, SLOT(setDate(QDate)));

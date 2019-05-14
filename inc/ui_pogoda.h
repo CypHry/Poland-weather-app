@@ -56,8 +56,8 @@ public:
     QGridLayout *gridLayout_12;
     QLabel *label_4;
     QSpacerItem *horizontalSpacer_6;
-    QtCharts::QChartView *graphicsView_4;
-    QtCharts::QChartView *graphicsView_2;
+    QtCharts::QChartView *temperature;
+    QtCharts::QChartView *wind_speed;
     QGridLayout *gridLayout_15;
     QComboBox *city_dropdown;
     QDateEdit *date_edit2;
@@ -69,8 +69,8 @@ public:
     QGridLayout *gridLayout_14;
     QLabel *label;
     QSpacerItem *horizontalSpacer_3;
-    QtCharts::QChartView *graphicsView_3;
-    QtCharts::QChartView *graphicsView;
+    QtCharts::QChartView *humidity;
+    QtCharts::QChartView *pressure;
     QSpacerItem *verticalSpacer;
     QGridLayout *gridLayout_8;
     QSpacerItem *horizontalSpacer;
@@ -192,15 +192,15 @@ public:
 
         gridLayout_2->addLayout(gridLayout_12, 0, 0, 1, 1);
 
-        graphicsView_4 = new QtCharts::QChartView(tab_2);
-        graphicsView_4->setObjectName(QString::fromUtf8("graphicsView_4"));
+        temperature = new QtCharts::QChartView(tab_2);
+        temperature->setObjectName(QString::fromUtf8("temperature"));
 
-        gridLayout_2->addWidget(graphicsView_4, 1, 0, 1, 1);
+        gridLayout_2->addWidget(temperature, 1, 0, 1, 1);
 
-        graphicsView_2 = new QtCharts::QChartView(tab_2);
-        graphicsView_2->setObjectName(QString::fromUtf8("graphicsView_2"));
+        wind_speed = new QtCharts::QChartView(tab_2);
+        wind_speed->setObjectName(QString::fromUtf8("wind_speed"));
 
-        gridLayout_2->addWidget(graphicsView_2, 5, 0, 1, 1);
+        gridLayout_2->addWidget(wind_speed, 5, 0, 1, 1);
 
         gridLayout_15 = new QGridLayout();
         gridLayout_15->setObjectName(QString::fromUtf8("gridLayout_15"));
@@ -272,15 +272,15 @@ public:
 
         gridLayout_2->addLayout(gridLayout_14, 6, 0, 1, 1);
 
-        graphicsView_3 = new QtCharts::QChartView(tab_2);
-        graphicsView_3->setObjectName(QString::fromUtf8("graphicsView_3"));
+        humidity = new QtCharts::QChartView(tab_2);
+        humidity->setObjectName(QString::fromUtf8("humidity"));
 
-        gridLayout_2->addWidget(graphicsView_3, 3, 0, 1, 1);
+        gridLayout_2->addWidget(humidity, 3, 0, 1, 1);
 
-        graphicsView = new QtCharts::QChartView(tab_2);
-        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        pressure = new QtCharts::QChartView(tab_2);
+        pressure->setObjectName(QString::fromUtf8("pressure"));
 
-        gridLayout_2->addWidget(graphicsView, 7, 0, 1, 1);
+        gridLayout_2->addWidget(pressure, 7, 0, 1, 1);
 
         tabWidget->addTab(tab_2, QString());
 

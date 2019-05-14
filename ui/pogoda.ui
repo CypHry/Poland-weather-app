@@ -202,10 +202,10 @@
              </layout>
             </item>
             <item row="1" column="0">
-             <widget class="QtCharts::QChartView" name="graphicsView_4"/>
+             <widget class="QtCharts::QChartView" name="temperature"/>
             </item>
             <item row="5" column="0">
-             <widget class="QtCharts::QChartView" name="graphicsView_2"/>
+             <widget class="QtCharts::QChartView" name="wind_speed"/>
             </item>
             <item row="8" column="0">
              <layout class="QGridLayout" name="gridLayout_15">
@@ -365,10 +365,10 @@
              </layout>
             </item>
             <item row="3" column="0">
-             <widget class="QtCharts::QChartView" name="graphicsView_3"/>
+             <widget class="QtCharts::QChartView" name="humidity"/>
             </item>
             <item row="7" column="0">
-             <widget class="QtCharts::QChartView" name="graphicsView"/>
+             <widget class="QtCharts::QChartView" name="pressure"/>
             </item>
            </layout>
           </widget>
