@@ -9,7 +9,6 @@ weather_MainWindow::weather_MainWindow(QMainWindow* parent) : QMainWindow(parent
     Ui.map->setScene(w_map->get_scene_ptr());
     Ui.temperature->setChart(charts->get_temperature_chart());
     Ui.humidity->setChart(charts->get_humidity_chart());
-    charts->update_data("Warszawa");
 
     QObject::connect(Ui.date_edit, SIGNAL(dateChanged(QDate)), Ui.date_edit2, SLOT(setDate(QDate)));
     QObject::connect(Ui.date_edit2, SIGNAL(dateChanged(QDate)), Ui.date_edit, SLOT(setDate(QDate)));

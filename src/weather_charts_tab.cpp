@@ -26,19 +26,27 @@ void weather_charts_tab::set_new_series()
     QtCharts::QLineSeries* temperature_series = new QtCharts::QLineSeries();
     QtCharts::QLineSeries* humidity_series = new QtCharts::QLineSeries();
 
-    temperature_series->append(0, 2);
-    temperature_series->append(2, 3);
-    temperature_series->append(4, 2);
-    temperature_series->append(6, 4);
+    QString hours_str[] = {"00:00:00", "03:00:00", "06:00:00", "09:00:00", "12:00:00", "15:00:00", "18:00:00", "21:00:00"};
+    int hours_int[] = {0, 3, 6, 9, 12, 15, 18, 21};
+    QString filename = "weather_data/";
+    filename.append(current_city);
+    filename.append(" ");
+    filename.append(current_date.toString("yyyy-MM-dd"));
+    filename.append(" ");
+
+    QString temp_filename;
+    for(unsigned int i = 0; i < 8; i++)
+    {
+        temp_filename = filename;
+        temp_filename.append(hours_str[i]);
+        qDebug() << temp_filename;
+        temperature_series->append(hours_int[i], hours_int[i]);
+        humidity_series->append(hours_int[i], hours_int[i]);
+    }
 
     temperature->removeAllSeries();
     temperature->addSeries(temperature_series);
     temperature->createDefaultAxes();
-
-    humidity_series->append(0, 4);
-    humidity_series->append(2, 6);
-    humidity_series->append(4, 7);
-    humidity_series->append(6, 2);
 
     humidity->removeAllSeries();
     humidity->addSeries(humidity_series);
