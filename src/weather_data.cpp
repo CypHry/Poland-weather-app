@@ -14,10 +14,10 @@ void weather_data::parse_from_string(QString answer)
 
     city_name = obj.value("name").toString();
     description = weather_obj.value("description").toString();
-    pressure = main_obj.value("pressure").toInt();
+    pressure = main_obj.value("pressure").toDouble();
     temp = main_obj.value("temp").toDouble();
     humidity = main_obj.value("humidity").toInt();
-    wind_deg = wind_obj.value("deg").toInt();
+    wind_deg = wind_obj.value("deg").toDouble();
     wind_speed = wind_obj.value("speed").toDouble();
     clouds = cloud_obj.value("all").toInt();
     rain = obj.value("rain").toInt();
@@ -34,5 +34,5 @@ weather_data::weather_data(QObject* parent)
 
 void weather_data::notify_after_data_parsed(QObject* obj)
 {
-    QObject::connect(this, SIGNAL(data_parsed()), obj, SLOT(data_parsed()));
+    QObject::connect(this, SIGNAL(data_parsed()), obj, SLOT(update_parsed_data()));
 }

@@ -23,7 +23,7 @@ private:
     Ui::MainWindow Ui; ///< Ui class created by QtDesigner
     weather_map* w_map; ///< Weather map scene and it's data
     city_info* c_info; ///< City info scene and it's data
-    weather_charts_tab* charts;
+    weather_charts_tab* charts; ///< Charts tab
 
 public:
     /**@brief Constructor
@@ -44,6 +44,7 @@ public slots:
     /**@brief Changes currently displayed scene to weather map.
      */
     void change_scene_to_map();
+
     /**@brief Changes currently displayed scene to city info.
      *
      * City info is parsed from selected city param.

@@ -56,11 +56,28 @@ public:
     ~weather_map(){scene->clearSelection(); cities.clear(); delete scene;}
 
 public slots:
+    /**@brief Updates weather data for all cities after changing date.
+     *
+     * @param new_data
+     */
     void update_date(QDate new_date);
+
+    /**@brief Updates weather data for all cities after changing time.
+     *
+     * @param new_time
+     */
     void update_time(QTime new_time);
+
+    /**@brief Checks if a city was selected and if it was emits change_scene signal with the selected city as a param.
+     *
+     */
     void check_selected();
 
 signals:
+    /**@brief Signal emitted after selecting a city on map.
+     *
+     * @param selected city
+     */
     void change_scene(std::shared_ptr<city> selected_city);
 
 };

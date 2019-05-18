@@ -30,10 +30,10 @@ private:
     QString date; ///< Weather date
     QString description; ///< Short description of weather
     double temp; ///< Temperature in Celsius
-    int pressure; ///< Pressure in hPa
+    double pressure; ///< Pressure in hPa
     int humidity; ///< Humidity in %
     double wind_speed; ///< Wind speed in m/s
-    int wind_deg; ///< Wind direction as meteorological degrees
+    double wind_deg; ///< Wind direction as meteorological degrees
     int clouds; ///< Cloudiness in %
     int rain; ///< Rain volume from last hour in mm
     int snow; ///< Snow volume from last hour in mm
@@ -92,7 +92,7 @@ public:
      *
      * @return pressure
      */
-    const int& get_pressure() const {return pressure;}
+    const double& get_pressure() const {return pressure;}
 
     /** @brief humidity getter
      *
@@ -120,7 +120,7 @@ public:
      *
      * @return wind_deg
      */
-    const int& get_wind_deg() const {return wind_deg;}
+    const double& get_wind_deg() const {return wind_deg;}
 
     /** @brief clouds getter
      *
@@ -154,6 +154,10 @@ public:
      */
     const QString& get_json_string() const {return json_string;}
 
+    /**@brief Connects data_parsed signal with obj update_parsed_data slot.
+     *
+     * @param obj
+     */
     void notify_after_data_parsed(QObject* obj);
 
 public slots:
