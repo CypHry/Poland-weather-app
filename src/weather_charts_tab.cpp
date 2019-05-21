@@ -53,7 +53,21 @@ void weather_charts_tab::set_new_series()
     temperature->addSeries(temperature_series);
     temperature->createDefaultAxes();
 
+    QtCharts::QValueAxis *axisX = new QtCharts::QValueAxis;
+    axisX->setTitleText("Time");
+    QtCharts::QValueAxis *axisY = new QtCharts::QValueAxis;
+    axisY->setTitleText("Temperature");
+    temperature->setAxisY(axisY, temperature_series);
+    temperature->setAxisX(axisX, temperature_series);
+
     humidity->removeAllSeries();
     humidity->addSeries(humidity_series);
     humidity->createDefaultAxes();
+
+    QtCharts::QValueAxis *axisX2 = new QtCharts::QValueAxis;
+    axisX2->setTitleText("Time");
+    QtCharts::QValueAxis *axisY2 = new QtCharts::QValueAxis;
+    axisY2->setTitleText("Humidity");
+    humidity->setAxisY(axisY2, humidity_series);
+    humidity->setAxisX(axisX2, humidity_series);
 }

@@ -7,6 +7,7 @@
 #include <QLineSeries>
 #include <QDebug>
 #include <QDate>
+#include <QValueAxis>
 #include "weather_data.h"
 #include "weather_data_reader.h"
 
