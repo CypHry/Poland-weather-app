@@ -157,55 +157,13 @@
              <widget class="QtCharts::QChartView" name="temperature"/>
             </item>
             <item row="2" column="0">
-             <layout class="QGridLayout" name="gridLayout_11">
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>humidity</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <spacer name="horizontalSpacer_5">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
+             <layout class="QGridLayout" name="gridLayout_11"/>
             </item>
             <item row="3" column="0">
              <widget class="QtCharts::QChartView" name="humidity"/>
             </item>
             <item row="0" column="0">
-             <layout class="QGridLayout" name="gridLayout_12">
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_4">
-                <property name="text">
-                 <string>temperature</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <spacer name="horizontalSpacer_6">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
+             <layout class="QGridLayout" name="gridLayout_12"/>
             </item>
             <item row="6" column="0">
              <layout class="QGridLayout" name="gridLayout_15">
@@ -296,23 +254,6 @@
                  </size>
                 </property>
                </spacer>
-              </item>
-              <item row="0" column="3">
-               <widget class="QTimeEdit" name="time_edit2">
-                <property name="maximumTime">
-                 <time>
-                  <hour>23</hour>
-                  <minute>0</minute>
-                  <second>0</second>
-                 </time>
-                </property>
-                <property name="displayFormat">
-                 <string>HH:00</string>
-                </property>
-                <property name="calendarPopup">
-                 <bool>false</bool>
-                </property>
-               </widget>
               </item>
              </layout>
             </item>
@@ -486,22 +427,6 @@
     <hint type="destinationlabel">
      <x>739</x>
      <y>592</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>time_edit2</sender>
-   <signal>timeChanged(QTime)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>update()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>821</x>
-     <y>547</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>797</x>
-     <y>582</y>
     </hint>
    </hints>
   </connection>

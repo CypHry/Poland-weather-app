@@ -17,7 +17,6 @@
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -52,17 +51,12 @@ public:
     QGridLayout *gridLayout_2;
     QtCharts::QChartView *temperature;
     QGridLayout *gridLayout_11;
-    QLabel *label_3;
-    QSpacerItem *horizontalSpacer_5;
     QtCharts::QChartView *humidity;
     QGridLayout *gridLayout_12;
-    QLabel *label_4;
-    QSpacerItem *horizontalSpacer_6;
     QGridLayout *gridLayout_15;
     QComboBox *city_dropdown;
     QDateEdit *date_edit2;
     QSpacerItem *horizontalSpacer_2;
-    QTimeEdit *time_edit2;
     QGridLayout *gridLayout_14;
     QGridLayout *gridLayout_13;
     QSpacerItem *verticalSpacer;
@@ -165,15 +159,6 @@ public:
 
         gridLayout_11 = new QGridLayout();
         gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
-        label_3 = new QLabel(tab_2);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        gridLayout_11->addWidget(label_3, 0, 0, 1, 1);
-
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_11->addItem(horizontalSpacer_5, 0, 1, 1, 1);
-
 
         gridLayout_2->addLayout(gridLayout_11, 2, 0, 1, 1);
 
@@ -184,15 +169,6 @@ public:
 
         gridLayout_12 = new QGridLayout();
         gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
-        label_4 = new QLabel(tab_2);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        gridLayout_12->addWidget(label_4, 0, 0, 1, 1);
-
-        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_12->addItem(horizontalSpacer_6, 0, 1, 1, 1);
-
 
         gridLayout_2->addLayout(gridLayout_12, 0, 0, 1, 1);
 
@@ -227,13 +203,6 @@ public:
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_15->addItem(horizontalSpacer_2, 0, 0, 1, 1);
-
-        time_edit2 = new QTimeEdit(tab_2);
-        time_edit2->setObjectName(QString::fromUtf8("time_edit2"));
-        time_edit2->setMaximumTime(QTime(23, 0, 0));
-        time_edit2->setCalendarPopup(false);
-
-        gridLayout_15->addWidget(time_edit2, 0, 3, 1, 1);
 
 
         gridLayout_2->addLayout(gridLayout_15, 6, 0, 1, 1);
@@ -293,7 +262,6 @@ public:
         QObject::connect(date_edit, SIGNAL(dateChanged(QDate)), MainWindow, SLOT(update()));
         QObject::connect(time_edit, SIGNAL(timeChanged(QTime)), MainWindow, SLOT(update()));
         QObject::connect(date_edit2, SIGNAL(dateChanged(QDate)), MainWindow, SLOT(update()));
-        QObject::connect(time_edit2, SIGNAL(timeChanged(QTime)), MainWindow, SLOT(update()));
 
         tabWidget->setCurrentIndex(0);
 
@@ -308,8 +276,6 @@ public:
         animations_checkBox->setText(QApplication::translate("MainWindow", "animations", nullptr));
         time_edit->setDisplayFormat(QApplication::translate("MainWindow", "HH:00", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "map", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "humidity", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "temperature", nullptr));
         city_dropdown->setItemText(0, QApplication::translate("MainWindow", "Warsaw", nullptr));
         city_dropdown->setItemText(1, QApplication::translate("MainWindow", "Wroclaw", nullptr));
         city_dropdown->setItemText(2, QApplication::translate("MainWindow", "Poznan", nullptr));
@@ -318,7 +284,6 @@ public:
         city_dropdown->setItemText(5, QApplication::translate("MainWindow", "Krakow", nullptr));
 
         date_edit2->setDisplayFormat(QApplication::translate("MainWindow", "dd/MM", nullptr));
-        time_edit2->setDisplayFormat(QApplication::translate("MainWindow", "HH:00", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "charts", nullptr));
         exit_button->setText(QApplication::translate("MainWindow", "exit", nullptr));
     } // retranslateUi
