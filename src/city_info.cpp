@@ -39,8 +39,6 @@ city_info::city_info()
     weather_texts[5]->setPos(200, 150);
     weather_texts.push_back(scene->addText("temp clouds"));
     weather_texts[6]->setPos(200, 170);
-
-    QObject::connect(scene, SIGNAL(selectionChanged()), this, SLOT(back_selected()));
 }
 
 

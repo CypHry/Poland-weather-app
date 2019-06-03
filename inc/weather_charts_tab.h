@@ -30,10 +30,12 @@ class weather_charts_tab : public QObject
     Q_OBJECT
 
 private:
-    QtCharts::QChart* temperature; ///< First chart. Currently temperature chart.
-    QtCharts::QChart* humidity; ///< Second chart. Currently humidity chart.
+    QtCharts::QChart* chart1; ///< First chart. Currently temperature chart.
+    QtCharts::QChart* chart2; ///< Second chart. Currently humidity chart.
     QString current_city; ///< Record holding currently used city.
     QDate current_date; ///< Record holding currently displayed date.
+    QString chart1_y;
+    QString chart2_y;
 
 public:
     /**@brief Constructor
@@ -48,13 +50,13 @@ public:
      *
      * @return temperature (chart)
      */
-    QtCharts::QChart* get_temperature_chart() const {return temperature;}
+    QtCharts::QChart* get_chart1() const {return chart1;}
 
     /**@brief humidity chart getter
      *
      * @return humidity (chart)
      */
-    QtCharts::QChart* get_humidity_chart() const {return humidity;}
+    QtCharts::QChart* get_chart2() const {return chart2;}
 
 private:
     /**@brief Sets new charts series.
@@ -76,6 +78,8 @@ public slots:
      */
     void update_date(QDate new_date);
 
+    void update_chart1(const QString& new_y);
+    void update_chart2(const QString& new_y);
 };
 
 

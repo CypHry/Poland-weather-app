@@ -7,8 +7,8 @@ weather_MainWindow::weather_MainWindow(QMainWindow* parent) : QMainWindow(parent
     charts = new weather_charts_tab(this);
     Ui.setupUi(this);
     Ui.map->setScene(w_map->get_scene_ptr());
-    Ui.temperature->setChart(charts->get_temperature_chart());
-    Ui.humidity->setChart(charts->get_humidity_chart());
+    Ui.temperature->setChart(charts->get_chart1());
+    Ui.humidity->setChart(charts->get_chart2());
 
     QObject::connect(Ui.date_edit, SIGNAL(dateChanged(QDate)), Ui.date_edit2, SLOT(setDate(QDate)));
     QObject::connect(Ui.date_edit2, SIGNAL(dateChanged(QDate)), Ui.date_edit, SLOT(setDate(QDate)));
@@ -16,6 +16,9 @@ weather_MainWindow::weather_MainWindow(QMainWindow* parent) : QMainWindow(parent
     QObject::connect(Ui.date_edit, SIGNAL(dateChanged(QDate)), w_map, SLOT(update_date(QDate)));
     QObject::connect(Ui.date_edit, SIGNAL(dateChanged(QDate)), charts, SLOT(update_date(QDate)));
     QObject::connect(Ui.city_dropdown, SIGNAL(activated(const QString&)), charts, SLOT(update_data(const QString&)));
+    QObject::connect(Ui.chart1_dropdown, SIGNAL(activated(const QString&)), charts, SLOT(update_chart1(const QString&)));
+    QObject::connect(Ui.chart2_dropdown, SIGNAL(activated(const QString&)), charts, SLOT(update_chart2(const QString&)));
+
     Ui.date_edit->setDate(QDate::currentDate());
     Ui.time_edit->setTime(QTime::currentTime());
 

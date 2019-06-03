@@ -15,8 +15,10 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -35,6 +37,7 @@ public:
     QGridLayout *gridLayout;
     QGridLayout *gridLayout_9;
     QGridLayout *gridLayout_10;
+    QSpacerItem *verticalSpacer;
     QTabWidget *tabWidget;
     QWidget *tab;
     QGridLayout *gridLayout_5;
@@ -44,23 +47,27 @@ public:
     QGraphicsView *cityinfo;
     QGridLayout *gridLayout_6;
     QGridLayout *gridLayout_7;
-    QDateEdit *date_edit;
-    QCheckBox *animations_checkBox;
     QTimeEdit *time_edit;
+    QCheckBox *animations_checkBox;
+    QDateEdit *date_edit;
+    QLabel *label;
+    QLabel *label_2;
     QSpacerItem *verticalSpacer_2;
     QWidget *tab_2;
     QGridLayout *gridLayout_2;
-    QtCharts::QChartView *temperature;
-    QGridLayout *gridLayout_11;
-    QtCharts::QChartView *humidity;
+    QComboBox *chart1_dropdown;
     QGridLayout *gridLayout_12;
+    QGridLayout *gridLayout_13;
+    QFormLayout *formLayout;
     QGridLayout *gridLayout_15;
     QComboBox *city_dropdown;
     QDateEdit *date_edit2;
     QSpacerItem *horizontalSpacer_2;
+    QGridLayout *gridLayout_11;
+    QtCharts::QChartView *temperature;
+    QtCharts::QChartView *humidity;
     QGridLayout *gridLayout_14;
-    QGridLayout *gridLayout_13;
-    QSpacerItem *verticalSpacer;
+    QComboBox *chart2_dropdown;
     QGridLayout *gridLayout_8;
     QSpacerItem *horizontalSpacer;
     QPushButton *exit_button;
@@ -83,6 +90,10 @@ public:
         gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
         gridLayout_10 = new QGridLayout();
         gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_10->addItem(verticalSpacer, 0, 2, 1, 1);
+
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setStyleSheet(QString::fromUtf8("font: 25 10pt \"Cantarell\";\n"
@@ -121,25 +132,35 @@ public:
         gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
         gridLayout_7 = new QGridLayout();
         gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
-        date_edit = new QDateEdit(tab);
-        date_edit->setObjectName(QString::fromUtf8("date_edit"));
-        date_edit->setDateTime(QDateTime(QDate(2019, 4, 8), QTime(0, 0, 0)));
-        date_edit->setCalendarPopup(true);
-
-        gridLayout_7->addWidget(date_edit, 0, 0, 1, 1);
-
-        animations_checkBox = new QCheckBox(tab);
-        animations_checkBox->setObjectName(QString::fromUtf8("animations_checkBox"));
-        animations_checkBox->setStyleSheet(QString::fromUtf8("font: 25 10pt \"Cantarell Light\";"));
-
-        gridLayout_7->addWidget(animations_checkBox, 2, 0, 1, 1);
-
         time_edit = new QTimeEdit(tab);
         time_edit->setObjectName(QString::fromUtf8("time_edit"));
         time_edit->setReadOnly(false);
         time_edit->setMaximumTime(QTime(23, 0, 0));
 
-        gridLayout_7->addWidget(time_edit, 1, 0, 1, 1);
+        gridLayout_7->addWidget(time_edit, 1, 1, 1, 1);
+
+        animations_checkBox = new QCheckBox(tab);
+        animations_checkBox->setObjectName(QString::fromUtf8("animations_checkBox"));
+        animations_checkBox->setStyleSheet(QString::fromUtf8("font: 25 10pt \"Cantarell Light\";"));
+
+        gridLayout_7->addWidget(animations_checkBox, 2, 1, 1, 1);
+
+        date_edit = new QDateEdit(tab);
+        date_edit->setObjectName(QString::fromUtf8("date_edit"));
+        date_edit->setDateTime(QDateTime(QDate(2019, 4, 8), QTime(0, 0, 0)));
+        date_edit->setCalendarPopup(true);
+
+        gridLayout_7->addWidget(date_edit, 0, 1, 1, 1);
+
+        label = new QLabel(tab);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        gridLayout_7->addWidget(label, 0, 0, 1, 1);
+
+        label_2 = new QLabel(tab);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout_7->addWidget(label_2, 1, 0, 1, 1);
 
 
         gridLayout_6->addLayout(gridLayout_7, 0, 0, 1, 1);
@@ -159,25 +180,29 @@ public:
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         gridLayout_2 = new QGridLayout(tab_2);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        temperature = new QtCharts::QChartView(tab_2);
-        temperature->setObjectName(QString::fromUtf8("temperature"));
+        chart1_dropdown = new QComboBox(tab_2);
+        chart1_dropdown->addItem(QString());
+        chart1_dropdown->addItem(QString());
+        chart1_dropdown->addItem(QString());
+        chart1_dropdown->addItem(QString());
+        chart1_dropdown->setObjectName(QString::fromUtf8("chart1_dropdown"));
 
-        gridLayout_2->addWidget(temperature, 1, 0, 1, 1);
-
-        gridLayout_11 = new QGridLayout();
-        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
-
-        gridLayout_2->addLayout(gridLayout_11, 2, 0, 1, 1);
-
-        humidity = new QtCharts::QChartView(tab_2);
-        humidity->setObjectName(QString::fromUtf8("humidity"));
-
-        gridLayout_2->addWidget(humidity, 3, 0, 1, 1);
+        gridLayout_2->addWidget(chart1_dropdown, 2, 0, 1, 1);
 
         gridLayout_12 = new QGridLayout();
         gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
 
-        gridLayout_2->addLayout(gridLayout_12, 0, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout_12, 1, 0, 1, 1);
+
+        gridLayout_13 = new QGridLayout();
+        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
+
+        gridLayout_2->addLayout(gridLayout_13, 7, 0, 1, 1);
+
+        formLayout = new QFormLayout();
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+
+        gridLayout_2->addLayout(formLayout, 0, 0, 1, 1);
 
         gridLayout_15 = new QGridLayout();
         gridLayout_15->setObjectName(QString::fromUtf8("gridLayout_15"));
@@ -212,25 +237,40 @@ public:
         gridLayout_15->addItem(horizontalSpacer_2, 0, 0, 1, 1);
 
 
-        gridLayout_2->addLayout(gridLayout_15, 6, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout_15, 9, 0, 1, 1);
+
+        gridLayout_11 = new QGridLayout();
+        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
+
+        gridLayout_2->addLayout(gridLayout_11, 4, 0, 1, 1);
+
+        temperature = new QtCharts::QChartView(tab_2);
+        temperature->setObjectName(QString::fromUtf8("temperature"));
+
+        gridLayout_2->addWidget(temperature, 3, 0, 1, 1);
+
+        humidity = new QtCharts::QChartView(tab_2);
+        humidity->setObjectName(QString::fromUtf8("humidity"));
+
+        gridLayout_2->addWidget(humidity, 6, 0, 1, 1);
 
         gridLayout_14 = new QGridLayout();
         gridLayout_14->setObjectName(QString::fromUtf8("gridLayout_14"));
 
-        gridLayout_2->addLayout(gridLayout_14, 5, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout_14, 8, 0, 1, 1);
 
-        gridLayout_13 = new QGridLayout();
-        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
+        chart2_dropdown = new QComboBox(tab_2);
+        chart2_dropdown->addItem(QString());
+        chart2_dropdown->addItem(QString());
+        chart2_dropdown->addItem(QString());
+        chart2_dropdown->addItem(QString());
+        chart2_dropdown->setObjectName(QString::fromUtf8("chart2_dropdown"));
 
-        gridLayout_2->addLayout(gridLayout_13, 4, 0, 1, 1);
+        gridLayout_2->addWidget(chart2_dropdown, 5, 0, 1, 1);
 
         tabWidget->addTab(tab_2, QString());
 
-        gridLayout_10->addWidget(tabWidget, 0, 0, 1, 1);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_10->addItem(verticalSpacer, 0, 1, 1, 1);
+        gridLayout_10->addWidget(tabWidget, 0, 1, 1, 1);
 
 
         gridLayout_9->addLayout(gridLayout_10, 0, 0, 1, 1);
@@ -279,10 +319,17 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Pogoda w Polsce", nullptr));
-        date_edit->setDisplayFormat(QApplication::translate("MainWindow", "dd/MM", nullptr));
-        animations_checkBox->setText(QApplication::translate("MainWindow", "animations", nullptr));
         time_edit->setDisplayFormat(QApplication::translate("MainWindow", "HH:00", nullptr));
+        animations_checkBox->setText(QApplication::translate("MainWindow", "animations", nullptr));
+        date_edit->setDisplayFormat(QApplication::translate("MainWindow", "dd/MM", nullptr));
+        label->setText(QApplication::translate("MainWindow", "date", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "time", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "map", nullptr));
+        chart1_dropdown->setItemText(0, QApplication::translate("MainWindow", "temperature", nullptr));
+        chart1_dropdown->setItemText(1, QApplication::translate("MainWindow", "humidity", nullptr));
+        chart1_dropdown->setItemText(2, QApplication::translate("MainWindow", "pressure", nullptr));
+        chart1_dropdown->setItemText(3, QApplication::translate("MainWindow", "wind speed", nullptr));
+
         city_dropdown->setItemText(0, QApplication::translate("MainWindow", "Warsaw", nullptr));
         city_dropdown->setItemText(1, QApplication::translate("MainWindow", "Wroclaw", nullptr));
         city_dropdown->setItemText(2, QApplication::translate("MainWindow", "Poznan", nullptr));
@@ -291,6 +338,11 @@ public:
         city_dropdown->setItemText(5, QApplication::translate("MainWindow", "Krakow", nullptr));
 
         date_edit2->setDisplayFormat(QApplication::translate("MainWindow", "dd/MM", nullptr));
+        chart2_dropdown->setItemText(0, QApplication::translate("MainWindow", "humidity", nullptr));
+        chart2_dropdown->setItemText(1, QApplication::translate("MainWindow", "temperature", nullptr));
+        chart2_dropdown->setItemText(2, QApplication::translate("MainWindow", "wind speed", nullptr));
+        chart2_dropdown->setItemText(3, QApplication::translate("MainWindow", "pressure", nullptr));
+
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "charts", nullptr));
         exit_button->setText(QApplication::translate("MainWindow", "exit", nullptr));
     } // retranslateUi

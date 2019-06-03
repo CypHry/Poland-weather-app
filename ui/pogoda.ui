@@ -31,7 +31,20 @@
      <layout class="QGridLayout" name="gridLayout_9">
       <item row="0" column="0">
        <layout class="QGridLayout" name="gridLayout_10">
-        <item row="0" column="0">
+        <item row="0" column="2">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="1">
          <widget class="QTabWidget" name="tabWidget">
           <property name="styleSheet">
            <string notr="true">font: 25 10pt &quot;Cantarell&quot;;
@@ -90,7 +103,34 @@
                <layout class="QGridLayout" name="gridLayout_6">
                 <item row="0" column="0">
                  <layout class="QGridLayout" name="gridLayout_7">
-                  <item row="0" column="0">
+                  <item row="1" column="1">
+                   <widget class="QTimeEdit" name="time_edit">
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="maximumTime">
+                     <time>
+                      <hour>23</hour>
+                      <minute>0</minute>
+                      <second>0</second>
+                     </time>
+                    </property>
+                    <property name="displayFormat">
+                     <string>HH:00</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QCheckBox" name="animations_checkBox">
+                    <property name="styleSheet">
+                     <string notr="true">font: 25 10pt &quot;Cantarell Light&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>animations</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
                    <widget class="QDateEdit" name="date_edit">
                     <property name="dateTime">
                      <datetime>
@@ -110,30 +150,17 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="2" column="0">
-                   <widget class="QCheckBox" name="animations_checkBox">
-                    <property name="styleSheet">
-                     <string notr="true">font: 25 10pt &quot;Cantarell Light&quot;;</string>
-                    </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label">
                     <property name="text">
-                     <string>animations</string>
+                     <string>date</string>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="0">
-                   <widget class="QTimeEdit" name="time_edit">
-                    <property name="readOnly">
-                     <bool>false</bool>
-                    </property>
-                    <property name="maximumTime">
-                     <time>
-                      <hour>23</hour>
-                      <minute>0</minute>
-                      <second>0</second>
-                     </time>
-                    </property>
-                    <property name="displayFormat">
-                     <string>HH:00</string>
+                   <widget class="QLabel" name="label_2">
+                    <property name="text">
+                     <string>time</string>
                     </property>
                    </widget>
                   </item>
@@ -163,19 +190,40 @@
             <string>charts</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_2">
-            <item row="1" column="0">
-             <widget class="QtCharts::QChartView" name="temperature"/>
-            </item>
             <item row="2" column="0">
-             <layout class="QGridLayout" name="gridLayout_11"/>
+             <widget class="QComboBox" name="chart1_dropdown">
+              <item>
+               <property name="text">
+                <string>temperature</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>humidity</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>pressure</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>wind speed</string>
+               </property>
+              </item>
+             </widget>
             </item>
-            <item row="3" column="0">
-             <widget class="QtCharts::QChartView" name="humidity"/>
-            </item>
-            <item row="0" column="0">
+            <item row="1" column="0">
              <layout class="QGridLayout" name="gridLayout_12"/>
             </item>
-            <item row="6" column="0">
+            <item row="7" column="0">
+             <layout class="QGridLayout" name="gridLayout_13"/>
+            </item>
+            <item row="0" column="0">
+             <layout class="QFormLayout" name="formLayout"/>
+            </item>
+            <item row="9" column="0">
              <layout class="QGridLayout" name="gridLayout_15">
               <item row="0" column="1">
                <widget class="QComboBox" name="city_dropdown">
@@ -267,28 +315,45 @@
               </item>
              </layout>
             </item>
-            <item row="5" column="0">
+            <item row="4" column="0">
+             <layout class="QGridLayout" name="gridLayout_11"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QtCharts::QChartView" name="temperature"/>
+            </item>
+            <item row="6" column="0">
+             <widget class="QtCharts::QChartView" name="humidity"/>
+            </item>
+            <item row="8" column="0">
              <layout class="QGridLayout" name="gridLayout_14"/>
             </item>
-            <item row="4" column="0">
-             <layout class="QGridLayout" name="gridLayout_13"/>
+            <item row="5" column="0">
+             <widget class="QComboBox" name="chart2_dropdown">
+              <item>
+               <property name="text">
+                <string>humidity</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>temperature</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>wind speed</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>pressure</string>
+               </property>
+              </item>
+             </widget>
             </item>
            </layout>
           </widget>
          </widget>
-        </item>
-        <item row="0" column="1">
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </item>
