@@ -29,7 +29,6 @@ class city_info : public QObject
 private:
     QGraphicsScene* scene; ///< Scene connected to the main QGraphicsView (created in QtDesigner) that displays all the information,
     std::vector<QGraphicsTextItem*> weather_texts; ///< Pointers to items displayed on the scene that represents the weather information.
-    QGraphicsTextItem* back_text; ///< Clickable text item used for going back to the map scene.
     QGraphicsTextItem* city_name; ///< Text item that contains currently displayed name of the city.
     weather_data* data; ///< Pointer to the currently displayed weather data.
 
@@ -65,17 +64,8 @@ public:
      */
     void update_weather_texts();
 
-signals:
-    /**@brief Signal used after clicking on the back text item used to change scene back to the map of Poland.
-     *
-     */
-    void change_scene();
 
 public slots:
-    /**@brief Checks if back is selected and emits change_scene() signal.
-     *
-     */
-    void back_selected();
 
     /**@brief Updates weather texts after parsing the data.
      *

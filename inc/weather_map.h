@@ -78,7 +78,7 @@ signals:
      *
      * @param selected city
      */
-    void change_scene(std::shared_ptr<city> selected_city);
+    void city_selected(std::shared_ptr<city> selected_city);
 
 };
 

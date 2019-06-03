@@ -41,9 +41,6 @@ public:
     ~weather_MainWindow(){delete w_map; delete c_info;}
 
 public slots:
-    /**@brief Changes currently displayed scene to weather map.
-     */
-    void change_scene_to_map();
 
     /**@brief Changes currently displayed scene to city info.
      *
@@ -51,7 +48,7 @@ public slots:
      *
      * @param selected_city
      */
-    void change_scene_to_city(std::shared_ptr<city> selected_city);
+    void update_cityinfo(std::shared_ptr<city> selected_city);
 
 };
 

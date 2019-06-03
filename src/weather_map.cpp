@@ -43,7 +43,7 @@ void weather_map::check_selected()
     {
         if(cities[i]->get_city_name_ptr()->isSelected())
         {
-            emit change_scene(cities[i]);
+            emit city_selected(cities[i]);
             return;
         }
     }

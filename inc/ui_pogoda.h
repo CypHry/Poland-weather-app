@@ -41,6 +41,7 @@ public:
     QGridLayout *gridLayout_3;
     QGridLayout *gridLayout_4;
     QGraphicsView *map;
+    QGraphicsView *cityinfo;
     QGridLayout *gridLayout_6;
     QGridLayout *gridLayout_7;
     QDateEdit *date_edit;
@@ -106,6 +107,12 @@ public:
         map->setMouseTracking(true);
 
         gridLayout_4->addWidget(map, 0, 0, 1, 1);
+
+        cityinfo = new QGraphicsView(tab);
+        cityinfo->setObjectName(QString::fromUtf8("cityinfo"));
+        cityinfo->setMaximumSize(QSize(350, 16777215));
+
+        gridLayout_4->addWidget(cityinfo, 0, 1, 1, 1);
 
 
         gridLayout_3->addLayout(gridLayout_4, 0, 0, 1, 1);
