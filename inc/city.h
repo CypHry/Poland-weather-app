@@ -15,25 +15,24 @@
  *  @brief File contains  declaration of city class.
  *
  *  The city class is used for getting and storing weather data for specific city.
- *  It also holds QGraphicsTextItems that are displayed on the main map of Poland (city_name and weather_text).
+ *  the class also holds items that are displayed on the main map of Poland (city_name and weather_text).
  */
 
 /**@class city
- * @brief Class used for storing weather data and QGraphicsItems displayed on map of Poland for specific city.
+ * @brief Class used for storing weather data and items displayed on the map of Poland for specific city.
  *
- * While object of city class is being created it gets weather data for specified (by CITY_ID param in constructor) city
- * from server and parse them. All the weather data for currently displayed day are contained in data member.
- * Class has also QGraphicsTextItem members that are displayed on the map of poland (scene param in constructor).
- *
+ * While object of the city class is being created it gets weather data for specified city
+ * from the weather server. All the weather data for currently displayed day and time are contained in data member.
+ * The class also holds items that are displayed on the map of poland.
  */
 class city : public QObject
 {
     Q_OBJECT
 
 private:
-    CITY_ID city_id; ///< City ID given as a parameter in constructor. Specifies the created city.
-    weather_data* data; ///< Pointer to container for all the weather data
-    QGraphicsTextItem* weather_text; ///< Pointer to text that is currently displayed on map scene under the city name
+    CITY_ID city_id; ///< Specifies the created city.
+    weather_data* data; ///< Pointer to container of all the weather data
+    QGraphicsTextItem* weather_text; ///< Pointer to text that is currently displayed on map scene under the city name. Currently temperature
     QGraphicsTextItem* city_name; ///< Pointer to city name displayed on map scene
     weather_data_caller* data_caller; ///< Pointer to data_caller class used for getting json from weather server
 
@@ -52,7 +51,7 @@ public:
      *
      * Returns pointer to the city_name.
      *
-     * @return city_name
+     * @return @link city::city_name @endlink
      */
     QGraphicsTextItem* get_city_name_ptr() const {return city_name;}
 
@@ -60,13 +59,13 @@ public:
      *
      * Returns weather data (as pointer) currently held in the class.
      *
-     * @return data
+     * @return @link data @endlink
      */
     weather_data* get_weather_data() const {return data;}
 
-    /**@brief Updates data after changing date/timeedit in main window.
+    /**@brief Updates the weather data after changing date/timeedit in main window.
      *
-     * Reads file and parse weather data for new date and new time.
+     * Reads adequate file and parse weather data for the new date and new time.
      *
      * @param new_date
      * @param new_time
@@ -82,7 +81,7 @@ public:
 public slots:
     /** @brief Sets current weather_text (as temperature) on QGraphicsScene (map of Poland).
      *
-     *  Connected to data_parsed signal from weather_data class. Changes the weather_text from "" to current temp.
+     *  Connected to data_parsed signal from weather_data class. Changes the weather_text from "" to current temperature.
      */
     void set_weather_text();
 

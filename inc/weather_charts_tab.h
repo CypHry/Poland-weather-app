@@ -15,15 +15,13 @@
  *
  * File contains the weather_charts_tab class.
  * Weather_charts_tab class holds currently displayed charts in the charts tab.
- * Charts are updated after changing data/time.
- * Currently the first chart is temperature chart and the second chart is humidity chart.
+ * Charts are updated after changing the data/time.
  */
 
 /**@class weather_charts_tab
  * @brief The class holds currently displayed charts.
  *
- * Charts are updated after changing data/time.
- * Currently the first chart is temperature chart and the second chart is humidity chart.
+ * Charts are updated after changing the data/time.
  */
 class weather_charts_tab : public QObject
 {
@@ -34,8 +32,8 @@ private:
     QtCharts::QChart* chart2; ///< Second chart. Currently humidity chart.
     QString current_city; ///< Record holding currently used city.
     QDate current_date; ///< Record holding currently displayed date.
-    QString chart1_y;
-    QString chart2_y;
+    QString chart1_y; ///< Record specifying which chart is currently displayed.
+    QString chart2_y; ///< Record specifying which chart is currently displayed.
 
 public:
     /**@brief Constructor
@@ -46,39 +44,49 @@ public:
      */
     weather_charts_tab(QObject* parent  = nullptr);
 
-    /**@brief temperature chart getter
+    /**@brief The first chart getter
      *
-     * @return temperature (chart)
+     * @return @link weather_charts_tab::chart1 @endlink
      */
     QtCharts::QChart* get_chart1() const {return chart1;}
 
-    /**@brief humidity chart getter
+    /**@brief The second chart getter
      *
-     * @return humidity (chart)
+     * @return @link weather_charts_tab::chart2 @endlink
      */
     QtCharts::QChart* get_chart2() const {return chart2;}
 
 private:
-    /**@brief Sets new charts series.
+    /**@brief Sets new charts' series.
      *
-     * Reads data from files and sets new series.
+     * Reads data from files with weather information and sets new charts' series for currently used date (@link weather_charts_tab::current_date @endlink)
+     * based on @link weather_charts_tab::chart1_y @endlink and @link weather_charts_tab::chart2_y @endlink.
      */
     void set_new_series();
 
 public slots:
-    /**@brief Sets new chart's series after changing selected city.
+    /**@brief Sets new charts' series after changing the selected city on the map of Poland.
      *
      * @param selected city
      */
     void update_data(const QString& selected_city);
 
-    /**@brief Sets new chart's series after changing the date.
+    /**@brief Sets new charts' series after changing the date.
      *
      * @param new_date
      */
     void update_date(QDate new_date);
 
+    /**@brief Sets new charts series after changing the quantity of the first chart.
+    *
+    * @param new_date
+    */
     void update_chart1(const QString& new_y);
+
+    /**@brief Sets new chart series after changing the quantity of the second chart.
+    *
+    * @param new_date
+    */
     void update_chart2(const QString& new_y);
 };
 

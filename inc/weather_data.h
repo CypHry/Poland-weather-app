@@ -43,7 +43,7 @@ public:
      *
      * Connects data_parsed signal with parent's set_weather_text slot.
      *
-     * @param parent
+     * @param @link weather_data::parent @endlink
      */
     weather_data(QObject* parent = nullptr);
 
@@ -51,7 +51,7 @@ public:
     /** @brief city_name getter
      *
      * Returns city name.
-     * @return city_name
+     * @return @link weather_data::city_name @endlink
      */
     const QString& get_city_name() const {return city_name;}
 
@@ -66,7 +66,7 @@ public:
     /** @brief date getter
      *
      * Returns date and hour of stored weather.
-     * @return date
+     * @return @link weather_data::date @endlink
      */
     const QString& get_date() const {return date;}
 
@@ -74,7 +74,7 @@ public:
      *
      * Returns description of main weather condition.
      *
-     * @return description
+     * @return @link weather_data::description @endlink
      */
     const QString& get_description() const {return description;}
 
@@ -82,7 +82,7 @@ public:
      *
      * Returns temperature (Celsius)
      *
-     * @return temp
+     * @return @link weather_data::temp @endlink
      */
     const double& get_temp() const {return temp;}
 
@@ -90,7 +90,7 @@ public:
      *
      * Returns atmospheric pressure (hPa).
      *
-     * @return pressure
+     * @return @link weather_data::pressure @endlink
      */
     const double& get_pressure() const {return pressure;}
 
@@ -98,7 +98,7 @@ public:
      *
      * Returns humidity (%).
      *
-     * @return humidity
+     * @return @link weather_data::humidity @endlink
      */
     const int& get_humidity() const {return humidity;}
 
@@ -106,7 +106,7 @@ public:
      *
      * Returns wind speed (m/s).
      *
-     * @return wind_speed
+     * @return @link weather_data::wind_speed @endlink
      */
     const double& get_wind_speed() const {return wind_speed;}
 
@@ -118,7 +118,7 @@ public:
      * east wind - 180 degrees
      * west wind - 270 degrees
      *
-     * @return wind_deg
+     * @return @link weather_data::wind_deg @endlink
      */
     const double& get_wind_deg() const {return wind_deg;}
 
@@ -126,7 +126,7 @@ public:
      *
      * Returns cloudiness (%).
      *
-     * @return clouds
+     * @return @link weather_data::clouds @endlink
      */
     const int& get_clouds() const {return clouds;}
 
@@ -134,7 +134,7 @@ public:
      *
      * Returns rain volume from last hour (mm).
      *
-     * @return rain
+     * @return @link weather_data::rain @endlink
      */
     const int& get_rain() const {return rain;}
 
@@ -142,7 +142,7 @@ public:
      *
      * Returns snow volume from last hour (mm).
      *
-     * @return snow
+     * @return @link weather_data::snow @endlink
      */
     const int& get_snow() const {return snow;}
 
@@ -150,7 +150,7 @@ public:
      *
      * Returns json_string - URL request's answer.
      *
-     * @return json_string
+     * @return @link weather_data::json_string @endlink
      */
     const QString& get_json_string() const {return json_string;}
 
@@ -161,8 +161,9 @@ public:
     void notify_after_data_parsed(QObject* obj);
 
 public slots:
-    /** @brief Parsing data from QString (weather data in form of json string).
-     *  After data from answer is parsed emits data_parsed signal.
+    /** @brief Parse data from QString (weather data in form of json string).
+     *
+     *  After data from the weather server's answer is parsed emits data_parsed signal.
      *
      *  @param answer - URL weather data server's answer.
      */

@@ -32,7 +32,7 @@ enum CITY_ID {
 #define NUMBER_OF_CITIES 6 ///< Number of cities currently used in application.
 
 /**@class weather_data_caller
- * @brief Class used for creating and sending url requests.
+ * @brief Class used for creating and sending url requests to the weather server.
  *
  * Connects with weather data container (weather_data class) during creation.
  * After sending request to server weather_data_caller emits signal with answer to the connected data container.
@@ -45,59 +45,59 @@ class weather_data_caller : public QObject
 private:
 
     QNetworkAccessManager manager; ///< Used for sending requests
-    QNetworkRequest request; ///< Used for storing url for requests
-    QString answer; ///< Used for storing server's answer
+    QNetworkRequest request; ///< Used for storing a url for requests
+    QString answer; ///< Used for storing an answer from server
 
 
 public:
     /** @brief Constructor
      *
-     * Connects answer_changed signal with data_container.
+     * Connects answer_changed signal with the data_container's parse_from string slot.
      * Connects QNetworkAccessManager's finished signal with manager_finished slot.
      *
      * @param data_container
      */
     weather_data_caller(weather_data* data_container);
 
-    /** @brief Constructor witstd::vector<QGraphicsTextItem*> text_data_vect;h CITY as parameter
+    /** @brief Constructor with CITY ID as parameter
      *
-     * Connects answer_changed signal with data_container.
+     * Connects answer_changed signal with the data_container's parse_from_string slot.
      * Connects QNetworkAccessManager's finished signal with manager_finished slot.
      * Sets request's url for city's current weather.
      *
      * @param city - specifies which url to set
-     * @param data_container - place where weather data will be contained
+     * @param data_container - place where weather data will be held
      */
     weather_data_caller(const CITY_ID city, weather_data* data_container);
 
     /** @brief Constructor with url as parameter
      *
-     * Connects answer_changed signal with data_container.
+     * Connects answer_changed signal with the data_container's parse_from_string slot.
      * Connects QNetworkAccessManager's finished signal with manager_finished slot.
      * Sets request's url as passed url parameter.
      *
      * @param url - url address for sending requests
-     * @param data_container - place where weather data will be contained
+     * @param data_container - place where weather data will be held
      */
     weather_data_caller(const QUrl& url, weather_data* data_container);
 
     /** @brief Constructor
      *
-     * Connects answer_changed signal with data_container.
+     * Connects answer_changed signal with the data_container's parse_from_string slot.
      * Connects QNetworkAccessManager's finished signal with manager_finished slot.
      *
      * @param data_container
      */
     weather_data_caller(weather_forecast_data* data_container);
 
-    /** @brief Constructor witstd::vector<QGraphicsTextItem*> text_data_vect;h CITY as parameter
+    /** @brief Constructor with CITY as parameter
      *
-     * Connects answer_changed signal with data_container.
+     * Connects answer_changed signal with the data_container's parse_from_string slot.
      * Connects QNetworkAccessManager's finished signal with manager_finished slot.
      * Sets request's url for city's current weather.
      *
      * @param city - specifies which url to set
-     * @param data_container - place where weather data will be contained
+     * @param data_container - place where weather data will be held
      */
     weather_data_caller(const CITY_ID city, weather_forecast_data* data_container);
 
@@ -133,18 +133,18 @@ public:
     /** @brief answer getter.
      *
      * Returns URL request's answer.
-     * @return answer
+     * @return @link weather_data_caller::answer @endlink
      */
     const QString get_answer() const {return answer;}
 
 private slots:
-    /** @brief Slot for saving reply from server in answer variable.
+    /** @brief Slot for saving reply from the weather server in @link weather_data_caller::answer @endlink.
      *
      */
     void manager_finished(QNetworkReply* reply);
 
 signals:
-    /** @brief Signal is emitted when the answer is changed (after sending new request and receiving answer).
+    /** @brief Signal emitted when the answer is changed (after sending new request and receiving answer).
      *
      */
     void answer_changed(QString answer);

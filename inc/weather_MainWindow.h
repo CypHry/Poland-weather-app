@@ -8,7 +8,7 @@
 #include "weather_charts_tab.h"
 
 /** @file weather_MainWindow.h
- *  @brief File contains declaration of weather_MainWindow class.
+ *  @brief File contains the declaration of weather_MainWindow class.
  */
 
 /** @class weather_MainWindow
@@ -28,7 +28,8 @@ private:
 public:
     /**@brief Constructor
      *
-     * Sets Ui and graphics scene.Connects date and time edits from different tabs (map tab and chart tab).
+     * Sets Ui and graphics scenes for the map of Poland and the view with information about the selected city.
+     * Connects date and time edits from different tabs.
      *
      * @param parent
      */
@@ -36,13 +37,13 @@ public:
 
     /**@brief Destructor
      *
-     * Deletes w_map and c_info.
+     * Deletes @link weather_MainWindow::w_map @endlink and @link weather_MainWindow::c_info @endlink.
      */
     ~weather_MainWindow(){delete w_map; delete c_info;}
 
 public slots:
 
-    /**@brief Changes currently displayed scene to city info.
+    /**@brief Updates city info after selecting new city on the map of Poland.
      *
      * City info is parsed from selected city param.
      *

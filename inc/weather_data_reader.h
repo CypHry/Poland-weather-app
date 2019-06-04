@@ -6,10 +6,10 @@
 #include <QTextStream>
 
 /** @file weather_data_reader.h
- *  @brief File contains  declaration of weather_data_reader class.
+ *  @brief File contains  declaration of the weather_data_reader class.
  *
- *  Class weather_data_reader is used from reading weather data from files.
- *  It reads QString (weather data in form of json string) from specified file and passes it to weather_data for parsing.
+ *  Class weather_data_reader is used for reading weather data from files.
+ *  Reads QString (weather data in form of json string) from specified file and passes it to weather_data for parsing.
  */
 
 /**@class weather_data_reader
@@ -31,7 +31,7 @@ public:
      */
     int read_data_from_file(weather_data& data, const QString& filename);
 
-    /** Reads QString (weather data in form of json string) from file and parse to weather_data.
+    /** Reads QString (weather data in form of json string) from file and pass it to the weather_data for parsing.
      *
      * Weather data read from file is contained in data (weather_data passed as parameter).
      *
@@ -42,7 +42,7 @@ public:
      */
     int read_data_from_file(weather_data& data, QFile& file);
 
-    /** Reads QString (weather data in form of json string) from file and parse with weather_data.
+    /** Reads QString (weather data in form of json string) from file and pass it to the weather_data for parsing.
  *
  * Weather data read from file is contained in data (weather_data passed as parameter).
  *
@@ -53,7 +53,7 @@ public:
  */
     int read_data_from_file(weather_data* data, const QString& filename);
 
-    /** Reads QString (weather data in form of json string) from file and parse to weather_data.
+    /** Reads QString (weather data in form of json string) from file and pass it to the weather_data for parsing.
      *
      * Weather data read from file is contained in data (weather_data passed as parameter).
      *

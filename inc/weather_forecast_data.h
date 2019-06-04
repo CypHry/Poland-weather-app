@@ -13,12 +13,11 @@
 /** @file weather_forecast_data.h
  *  @brief File contains  declaration of weather_forecast_data class.
  *
- *  Class weather_forecast_data parses weather data from json objects (passed as QString)
- *  and saves them in std::vector<QString>.
+ *  Class weather_forecast_data parses and stores weather data from json objects (passed as QString)
  */
 
 /**@class weather_forecast_data
- * @brief Class used for parsing and storing weather forecast data as json string.
+ * @brief Class used for parsing and storing weather forecast data as json object.
  *
  * Class parses weather data from json objects (passed as QString) and saves them in std::vector<std::shared_ptr<QString>>.
  */
@@ -28,13 +27,13 @@ class weather_forecast_data : public QObject
 
 private:
     std::vector<std::shared_ptr<QString>> json_strings; ///< Weather data in form of json strings.
-    std::vector<std::shared_ptr<QString>> dates; ///< Forecast weather date
+    std::vector<std::shared_ptr<QString>> dates; ///< Forecast weather dates
     QString city; ///< Name of the currently parsed city
 
 public:
     /** @brief Constructor
      *
-     * Connects data_parsed signal with parent's save_data slot.
+     * Connects the data_parsed signal with parent's save_data slot.
      *
      * @param parent
      */
@@ -44,29 +43,30 @@ public:
     *
     * Returns json_strings - URL request's answer as vector of shared_ptr<QString>.
     *
-    * @return json_strings
+    * @return @link weather_forecast_data::json_strings @endlink
     */
     const std::vector<std::shared_ptr<QString>>& get_json_strings() const {return json_strings;}
 
-    /**@brief dates getter
+    /**@brief Dates getter
      *
-     * Returns vector of (forecast weather) dates for parsed data.
+     * Returns vector of all (forecast weather) dates.
      *
-     * @return dates
+     * @return @link weather_forecast_data::dates @endlink
      */
     const std::vector<std::shared_ptr<QString>>& get_dates() const {return dates;}
 
-    /**@brief city getter
+    /**@brief City getter
      *
      * Returns the name of currently parsed city.
      *
-     * @return city
+     * @return @link weather_forecast_data::city @endlink
      */
     QString get_city() const {return city;}
 
 public slots:
-    /** @brief Parsing data from QString (weather data in form of json strings).
-     *  After data from answer is parsed emits data_parsed signal.
+    /** @brief Parsing data from json object (passed as QString).
+     *
+     *  After data from the weather server answer is parsed emits data_parsed signal.
      *
      *  @param answer - URL weather data server's answer.
      */

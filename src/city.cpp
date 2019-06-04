@@ -40,7 +40,9 @@ city::city(const CITY_ID city_id, QGraphicsScene* scene)
 
 void city::set_weather_text()
 {
-    weather_text->setPlainText(QString::number(data->get_temp()));
+    QString temp = QString::number(data->get_temp());
+    temp.append(" Celsius");
+    weather_text->setPlainText(temp);
     switch(city_id) {
         case POZNAN:
             weather_text->setPos(180+10,265+10);

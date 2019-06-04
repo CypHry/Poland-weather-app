@@ -11,17 +11,15 @@
 #include <city.h>
 
 /**@file weather_map.h
- * @brief File provides a class used for creating map's graphics scene.\
+ * @brief File provides the class used for creating map's graphics scene.
  *
- * Class weather_map contains scene of all objects displayed on the map and pointer to the background image.
- * There is also a std::vector of all the cities used in the app.
+ * Class weather_map contains the scene of all objects displayed on the map and the background image.
  */
 
 /**@class weather_map
  * @brief Class represents map of poland.
  *
  * Class contains scene of all objects displayed on the map and pointer to the background image.
- * There is also a std::vector of all the cities used in the app.
  */
 class weather_map : public QObject
 {
@@ -29,29 +27,28 @@ class weather_map : public QObject
 
 private:
     QGraphicsScene* scene; ///< Scene of all graphics items displayed on the map of poland and the map itself.
-    QGraphicsPixmapItem* map_img; ///< Pointer to the map of poland background image.
+    QGraphicsPixmapItem* map_img; ///< Pointer to the map of Poland background image.
     std::vector<std::shared_ptr<city>> cities; ///< Vector of all the cities used in the app.
-    QDate currently_used_date; ///< Currently used date for displayed weather.
-    QTime currently_used_time; ///< Currently used time for displayed weather.
+    QDate currently_used_date; ///< Currently used date in the app.
+    QTime currently_used_time; ///< Currently used time in the app.
 
 public:
-    /** @brief weather_map constructor
+    /** @brief Constructor
      *
-     *  Sets map img and creates cities.
-     *  Cities and map are added to the main graphics scene.
+     *  Sets map's background image. All the cities are added to the map of Poland.
      */
     weather_map();
 
-    /** @brief scene pointer getter
+    /** @brief Scene pointer getter
      *
-     * Returns pointer to the main graphics scene.
-     * @return scene
+     * Returns pointer to the map's graphics scene.
+     * @return @link weather_map::scene @endlink
      */
     QGraphicsScene* get_scene_ptr() {return scene;}
 
     /**@brief Destructor
      *
-     * Deletes the main graphics scene.
+     * Deletes the map of Poland.
      */
     ~weather_map(){scene->clearSelection(); cities.clear(); delete scene;}
 
@@ -62,7 +59,7 @@ public slots:
      */
     void update_date(QDate new_date);
 
-    /**@brief Updates weather data for all cities after changing time.
+    /**@brief Updates weather data for all cities after changing the time.
      *
      * @param new_time
      */
@@ -74,7 +71,7 @@ public slots:
     void check_selected();
 
 signals:
-    /**@brief Signal emitted after selecting a city on map.
+    /**@brief Signal emitted after selecting a city on the map.
      *
      * @param selected city
      */

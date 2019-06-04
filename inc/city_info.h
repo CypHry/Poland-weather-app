@@ -19,7 +19,7 @@
  * @brief city_info contains specific information for a currently displayed city
  *
  * The information are displayed by a QGraphicsView (created in QtDesigner) connected to the
- * QGraphicsScene from the class. The information are updated after changing data/timeedits.
+ * QGraphicsScene from the class. The information are updated after changing the data/timeedit.
  *
  */
 class city_info : public QObject
@@ -35,14 +35,13 @@ private:
 public:
     /**@brief Constructor
      *
-     * Adds texts to the graphics text items and sets their positions.
-     * Connects signal from scene (selectionChanged()) with back selected slot.
+     * Adds weather information to the scene and sets their positions.
      */
     city_info();
 
     /**@brief scene getter
      *
-     * @return scene
+     * @return @link city_info::scene @endlink
      */
     QGraphicsScene* get_scene_ptr() const {return scene;}
 
@@ -60,7 +59,7 @@ public:
 
     /**@brief Updates weather text items.
      *
-     * Changes the text items displayed on the scene after weather data is updated.
+     * Updates text items displayed on the scene after updating weather data.
      */
     void update_weather_texts();
 
