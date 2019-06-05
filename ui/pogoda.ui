@@ -16,6 +16,12 @@
     <height>0</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Pogoda w Polsce</string>
   </property>
@@ -46,8 +52,19 @@
         </item>
         <item row="0" column="1">
          <widget class="QTabWidget" name="tabWidget">
+          <property name="font">
+           <font>
+            <family>12 Cantarell</family>
+            <pointsize>10</pointsize>
+            <weight>3</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <strikeout>false</strikeout>
+            <kerning>false</kerning>
+           </font>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 25 10pt &quot;Cantarell&quot;;
+           <string notr="true">font: 25 10pt Bold &quot;Cantarell&quot;;
 </string>
           </property>
           <property name="currentIndex">
@@ -82,8 +99,20 @@
                     <height>0</height>
                    </size>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>12 Cantarell Light</family>
+                    <pointsize>10</pointsize>
+                    <weight>3</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
                   <property name="mouseTracking">
                    <bool>true</bool>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 25 10pt Bold &quot;Cantarell Light&quot;;</string>
                   </property>
                  </widget>
                 </item>
@@ -94,6 +123,18 @@
                     <width>350</width>
                     <height>16777215</height>
                    </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>12 Cantarell Light</family>
+                    <pointsize>10</pointsize>
+                    <weight>3</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 25 10pt Bold &quot;Cantarell Light&quot;;</string>
                   </property>
                  </widget>
                 </item>
@@ -122,8 +163,17 @@
                   </item>
                   <item row="2" column="1">
                    <widget class="QCheckBox" name="animations_checkBox">
+                    <property name="font">
+                     <font>
+                      <family>12 Cantarell Light</family>
+                      <pointsize>10</pointsize>
+                      <weight>3</weight>
+                      <italic>false</italic>
+                      <bold>false</bold>
+                     </font>
+                    </property>
                     <property name="styleSheet">
-                     <string notr="true">font: 25 10pt &quot;Cantarell Light&quot;;</string>
+                     <string notr="true">font: 25 10pt Bold &quot;Cantarell Light&quot;;</string>
                     </property>
                     <property name="text">
                      <string>animations</string>
@@ -152,6 +202,15 @@
                   </item>
                   <item row="0" column="0">
                    <widget class="QLabel" name="label">
+                    <property name="font">
+                     <font>
+                      <family>12 Cantarell</family>
+                      <pointsize>10</pointsize>
+                      <weight>3</weight>
+                      <italic>false</italic>
+                      <bold>false</bold>
+                     </font>
+                    </property>
                     <property name="text">
                      <string>date</string>
                     </property>
@@ -159,6 +218,15 @@
                   </item>
                   <item row="1" column="0">
                    <widget class="QLabel" name="label_2">
+                    <property name="font">
+                     <font>
+                      <family>12 Cantarell</family>
+                      <pointsize>10</pointsize>
+                      <weight>3</weight>
+                      <italic>false</italic>
+                      <bold>false</bold>
+                     </font>
+                    </property>
                     <property name="text">
                      <string>time</string>
                     </property>
@@ -192,6 +260,15 @@
            <layout class="QGridLayout" name="gridLayout_2">
             <item row="2" column="0">
              <widget class="QComboBox" name="chart1_dropdown">
+              <property name="font">
+               <font>
+                <family>12 Cantarell</family>
+                <pointsize>10</pointsize>
+                <weight>3</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
               <item>
                <property name="text">
                 <string>temperature</string>
@@ -374,8 +451,18 @@
         </item>
         <item row="0" column="1">
          <widget class="QPushButton" name="exit_button">
+          <property name="font">
+           <font>
+            <family>12 Cantarell</family>
+            <pointsize>10</pointsize>
+            <weight>3</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 25 10pt &quot;Cantarell&quot;;</string>
+           <string notr="true">font: 25 10pt Bold
+ &quot;Cantarell&quot;;</string>
           </property>
           <property name="text">
            <string>exit</string>

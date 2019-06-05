@@ -32,8 +32,8 @@ private:
     QtCharts::QChart* chart2; ///< Second chart. Currently humidity chart.
     QString current_city; ///< Record holding currently used city.
     QDate current_date; ///< Record holding currently displayed date.
-    QString chart1_y; ///< Record specifying which chart is currently displayed.
-    QString chart2_y; ///< Record specifying which chart is currently displayed.
+    QString quantity1; ///< Record specifying which chart is currently displayed.
+    QString quantity2; ///< Record specifying which chart is currently displayed.
 
 public:
     /**@brief Constructor
@@ -60,7 +60,7 @@ private:
     /**@brief Sets new charts' series.
      *
      * Reads data from files with weather information and sets new charts' series for currently used date (@link weather_charts_tab::current_date @endlink)
-     * based on @link weather_charts_tab::chart1_y @endlink and @link weather_charts_tab::chart2_y @endlink.
+     * based on @link weather_charts_tab::quantity1 @endlink and @link weather_charts_tab::quantity2 @endlink.
      */
     void set_new_series();
 

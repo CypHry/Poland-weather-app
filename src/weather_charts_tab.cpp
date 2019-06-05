@@ -8,8 +8,8 @@ weather_charts_tab::weather_charts_tab(QObject* parent) : QObject(parent)
     chart1->legend()->hide();
     chart2->legend()->hide();
 
-    chart1_y = "temperature";
-    chart2_y = "humidity";
+    quantity1 = "temperature";
+    quantity2 = "humidity";
 
     current_city = "Warsaw";
 }
@@ -28,13 +28,13 @@ void weather_charts_tab::update_date(QDate new_date)
 
 void weather_charts_tab::update_chart1(const QString& new_y)
 {
-    chart1_y = new_y;
+    quantity1 = new_y;
     set_new_series();
 }
 
 void weather_charts_tab::update_chart2(const QString& new_y)
 {
-    chart2_y = new_y;
+    quantity2 = new_y;
     set_new_series();
 }
 
@@ -60,21 +60,21 @@ void weather_charts_tab::set_new_series()
         temp_filename = filename;
         temp_filename.append(hours_str[i]);
         reader.read_data_from_file(data, temp_filename);
-        if(chart1_y == "temperature")
+        if(quantity1 == "temperature")
             chart1_series->append(hours_int[i], data.get_temp());
-        else if(chart1_y == "humidity")
+        else if(quantity1 == "humidity")
             chart1_series->append(hours_int[i], data.get_humidity());
-        else if(chart1_y == "pressure")
+        else if(quantity1 == "pressure")
             chart1_series->append(hours_int[i], data.get_pressure());
-        else if(chart1_y == "wind speed")
+        else if(quantity1 == "wind speed")
             chart1_series->append(hours_int[i], data.get_wind_speed());
-        if(chart2_y == "temperature")
+        if(quantity2 == "temperature")
             chart2_series->append(hours_int[i], data.get_temp());
-        else if(chart2_y == "humidity")
+        else if(quantity2 == "humidity")
             chart2_series->append(hours_int[i], data.get_humidity());
-        else if(chart2_y == "pressure")
+        else if(quantity2 == "pressure")
             chart2_series->append(hours_int[i], data.get_pressure());
-        else if(chart2_y == "wind speed")
+        else if(quantity2 == "wind speed")
             chart2_series->append(hours_int[i], data.get_wind_speed());
     }
 

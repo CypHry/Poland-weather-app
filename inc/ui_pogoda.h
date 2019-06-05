@@ -80,6 +80,10 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(919, 639);
         MainWindow->setSizeIncrement(QSize(0, 0));
+        QFont font;
+        font.setBold(true);
+        font.setWeight(75);
+        MainWindow->setFont(font);
         MainWindow->setAutoFillBackground(false);
         MainWindow->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(MainWindow);
@@ -96,7 +100,16 @@ public:
 
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setStyleSheet(QString::fromUtf8("font: 25 10pt \"Cantarell\";\n"
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("12 Cantarell"));
+        font1.setPointSize(10);
+        font1.setBold(false);
+        font1.setItalic(false);
+        font1.setWeight(3);
+        font1.setStrikeOut(false);
+        font1.setKerning(false);
+        tabWidget->setFont(font1);
+        tabWidget->setStyleSheet(QString::fromUtf8("font: 25 10pt Bold \"Cantarell\";\n"
 ""));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
@@ -115,13 +128,23 @@ public:
         map->setSizePolicy(sizePolicy);
         map->setMinimumSize(QSize(350, 250));
         map->setSizeIncrement(QSize(0, 0));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("12 Cantarell Light"));
+        font2.setPointSize(10);
+        font2.setBold(false);
+        font2.setItalic(false);
+        font2.setWeight(3);
+        map->setFont(font2);
         map->setMouseTracking(true);
+        map->setStyleSheet(QString::fromUtf8("font: 25 10pt Bold \"Cantarell Light\";"));
 
         gridLayout_4->addWidget(map, 0, 0, 1, 1);
 
         cityinfo = new QGraphicsView(tab);
         cityinfo->setObjectName(QString::fromUtf8("cityinfo"));
         cityinfo->setMaximumSize(QSize(350, 16777215));
+        cityinfo->setFont(font2);
+        cityinfo->setStyleSheet(QString::fromUtf8("font: 25 10pt Bold \"Cantarell Light\";"));
 
         gridLayout_4->addWidget(cityinfo, 0, 1, 1, 1);
 
@@ -141,7 +164,8 @@ public:
 
         animations_checkBox = new QCheckBox(tab);
         animations_checkBox->setObjectName(QString::fromUtf8("animations_checkBox"));
-        animations_checkBox->setStyleSheet(QString::fromUtf8("font: 25 10pt \"Cantarell Light\";"));
+        animations_checkBox->setFont(font2);
+        animations_checkBox->setStyleSheet(QString::fromUtf8("font: 25 10pt Bold \"Cantarell Light\";"));
 
         gridLayout_7->addWidget(animations_checkBox, 2, 1, 1, 1);
 
@@ -154,11 +178,19 @@ public:
 
         label = new QLabel(tab);
         label->setObjectName(QString::fromUtf8("label"));
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("12 Cantarell"));
+        font3.setPointSize(10);
+        font3.setBold(false);
+        font3.setItalic(false);
+        font3.setWeight(3);
+        label->setFont(font3);
 
         gridLayout_7->addWidget(label, 0, 0, 1, 1);
 
         label_2 = new QLabel(tab);
         label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setFont(font3);
 
         gridLayout_7->addWidget(label_2, 1, 0, 1, 1);
 
@@ -186,6 +218,7 @@ public:
         chart1_dropdown->addItem(QString());
         chart1_dropdown->addItem(QString());
         chart1_dropdown->setObjectName(QString::fromUtf8("chart1_dropdown"));
+        chart1_dropdown->setFont(font3);
 
         gridLayout_2->addWidget(chart1_dropdown, 2, 0, 1, 1);
 
@@ -283,7 +316,9 @@ public:
 
         exit_button = new QPushButton(centralwidget);
         exit_button->setObjectName(QString::fromUtf8("exit_button"));
-        exit_button->setStyleSheet(QString::fromUtf8("font: 25 10pt \"Cantarell\";"));
+        exit_button->setFont(font3);
+        exit_button->setStyleSheet(QString::fromUtf8("font: 25 10pt Bold\n"
+" \"Cantarell\";"));
 
         gridLayout_8->addWidget(exit_button, 0, 1, 1, 1);
 

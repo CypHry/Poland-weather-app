@@ -32,16 +32,18 @@ city::city(const CITY_ID city_id, QGraphicsScene* scene)
             city_name->setPos(270,40);
             break;
     }
-
+    QFont temp("Akaash", -1, 50, false);
+    city_name->setFont(temp);
     city_name->setFlag(QGraphicsItem::ItemIsSelectable);
     data_caller->get_data();
     weather_text = scene->addText("");
+    weather_text->setFont(temp);
 }
 
 void city::set_weather_text()
 {
     QString temp = QString::number(data->get_temp());
-    temp.append(" Celsius");
+    temp.append("°C");
     weather_text->setPlainText(temp);
     switch(city_id) {
         case POZNAN:
