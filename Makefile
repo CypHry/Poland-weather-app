@@ -8,7 +8,7 @@ PODSTAWIENIA=OBJECTS_DIR=${KATALOG_OBJ} INCLUDEPATH=inc\
 			HEADERS+=../inc/weather_map.h HEADERS+=../inc/city.h\
 			HEADERS+=../inc/weather_forecaster.h HEADERS+=../inc/weather_forecast_data.h\
 			HEADERS+=../inc/weather_MainWindow.h HEADERS+=../inc/city_info.h\
-			HEADERS+=../inc/weather_charts_tab.h
+			HEADERS+=../inc/weather_charts_tab.h HEADERS+=../inc/weather_animation.h
 KATALOG_OBJ=./obj
 KATALOG_MOC=./moc
 
