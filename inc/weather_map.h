@@ -9,6 +9,7 @@
 #include <QObject>
 #include <QWidget>
 #include <city.h>
+#include <weather_animation.h>
 
 /**@file weather_map.h
  * @brief File provides the class used for creating map's graphics scene.
@@ -32,6 +33,8 @@ private:
     QDate currently_used_date; ///< Currently used date in the app.
     QTime currently_used_time; ///< Currently used time in the app.
 
+
+    weather_animation* animation;
 public:
     /** @brief Constructor
      *
