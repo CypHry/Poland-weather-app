@@ -1,0 +1,1 @@
+{"clouds":{"all":100},"dt":1560459600,"dt_txt":"2019-06-13 21:00:00","main":{"grnd_level":984.31,"humidity":77,"pressure":1016.58,"sea_level":1016.58,"temp":22.1,"temp_kf":0.79,"temp_max":22.1,"temp_min":21.31},"sys":{"pod":"n"},"weather":[{"description":"overcast clouds","icon":"04n","id":804,"main":"Clouds"}],"wind":{"deg":264.666,"speed":1.67}}

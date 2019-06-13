@@ -1,0 +1,1 @@
+{"clouds":{"all":2},"dt":1560448800,"dt_txt":"2019-06-13 18:00:00","main":{"grnd_level":1000.62,"humidity":75,"pressure":1015.7,"sea_level":1015.7,"temp":19.44,"temp_kf":-3.22,"temp_max":22.67,"temp_min":19.44},"sys":{"pod":"d"},"weather":[{"description":"clear sky","icon":"01d","id":800,"main":"Clear"}],"wind":{"deg":320.766,"speed":2.04}}
