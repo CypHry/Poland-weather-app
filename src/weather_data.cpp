@@ -14,6 +14,7 @@ void weather_data::parse_from_string(QString answer)
 
     city_name = obj.value("name").toString();
     description = weather_obj.value("description").toString();
+    main = weather_obj.value("main").toString();
     pressure = main_obj.value("pressure").toDouble();
     temp = main_obj.value("temp").toDouble();
     humidity = main_obj.value("humidity").toInt();

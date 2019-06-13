@@ -45,7 +45,6 @@ city::city(const CITY_ID city_id, QGraphicsScene* scene)
     data_caller->get_data();
     weather_text = scene->addText("");
     weather_text->setFont(temp);
-    animation->change_icons(RAINY_DAY);
     animation->start_timer();
 }
 
@@ -74,6 +73,21 @@ void city::set_weather_text()
             weather_text->setPos(270+10,40+10);
             break;
     }
+    if(data->get_main() == "Rain" || data->get_main() == "Drizzle")
+    {
+        if(data->get_clouds() < 60)
+            animation->change_icons(RAINY_DAY);
+        else
+            animation->change_icons(RAINY);
+    }
+    else if(data->get_main() == "Thunderstorm")
+        animation->change_icons(THUNDER);
+    else if(data->get_description() == "few clouds" || data->get_description() == "scattered clouds")
+        animation->change_icons(CLOUDY_DAY);
+    else if(data->get_description() == "overcast clouds" || data->get_description() == "broken clouds")
+        animation->change_icons(CLOUDY);
+    else if(data->get_main() == "Clear")
+        animation->change_icons(DAY);
 }
 
 void city::update(const QDate new_date, const QTime new_time)
@@ -104,4 +118,21 @@ void city::update(const QDate new_date, const QTime new_time)
     {
         qDebug() << "Data file does not exist! (city::update)";
     }
+
+    if(data->get_main() == "Rain" || data->get_main() == "Drizzle")
+    {
+        if(data->get_clouds() < 60)
+            animation->change_icons(RAINY_DAY);
+        else
+            animation->change_icons(RAINY);
+    }
+    else if(data->get_main() == "Thunderstorm")
+        animation->change_icons(THUNDER);
+    else if(data->get_description() == "few clouds" || data->get_description() == "scattered clouds")
+        animation->change_icons(CLOUDY_DAY);
+    else if(data->get_description() == "overcast clouds" || data->get_description() == "broken clouds")
+        animation->change_icons(CLOUDY);
+    else if(data->get_main() == "Clear")
+        animation->change_icons(DAY);
+
 }

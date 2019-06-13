@@ -27,9 +27,9 @@ void weather_animation::change_icons(const ICON_TYPES new_icon_type)
     {
         case CLOUDY:
             icons[0].load("img/cloudy1.png");
-            icons[1].load("img/cloudy2.png");
-            icons[2].load("img/cloudy3.png");
-            icons[3].load("img/cloudy2.png");
+            icons[1].load("img/cloudy3.png");
+            icons[2].load("img/cloudy2.png");
+            icons[3].load("img/cloudy3.png");
             break;
         case CLOUDY_DAY:
             icons[0].load("img/cloudy-day-1.png");

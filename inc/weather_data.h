@@ -29,6 +29,7 @@ private:
     QString city_name; ///< Name of the city
     QString date; ///< Weather date
     QString description; ///< Short description of weather
+    QString main; ///< Main weather condition
     double temp; ///< Temperature in Celsius
     double pressure; ///< Pressure in hPa
     int humidity; ///< Humidity in %
@@ -77,6 +78,14 @@ public:
      * @return @link weather_data::description @endlink
      */
     const QString& get_description() const {return description;}
+
+    /** @brief main weather condition
+    *
+    * Returns the main weather condition.
+    *
+    * @return @link weather_data::main @endlink
+    */
+    const QString& get_main() const {return main;}
 
     /** @brief temperature getter
      *
