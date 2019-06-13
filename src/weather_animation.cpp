@@ -18,7 +18,7 @@ void weather_animation::update()
 
 void weather_animation::set_position(const unsigned int X, const unsigned int Y)
 {
-    current_item->setPos(X, Y+20);
+    current_item->setPos(X, Y+10);
 }
 
 void weather_animation::change_icons(const ICON_TYPES new_icon_type)

@@ -9,7 +9,7 @@
 #include <weather_data_caller.h>
 #include <weather_data_reader.h>
 #include <vector>
-
+#include <weather_animation.h>
 
 /** @file city.h
  *  @brief File contains  declaration of city class.
@@ -35,7 +35,7 @@ private:
     QGraphicsTextItem* weather_text; ///< Pointer to text that is currently displayed on map scene under the city name. Currently temperature
     QGraphicsTextItem* city_name; ///< Pointer to city name displayed on map scene
     weather_data_caller* data_caller; ///< Pointer to data_caller class used for getting json from weather server
-
+    weather_animation* animation;
 
 public:
     /** @brief Constructor

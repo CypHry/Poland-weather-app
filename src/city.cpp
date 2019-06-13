@@ -5,31 +5,38 @@ city::city(const CITY_ID city_id, QGraphicsScene* scene)
     this->city_id = city_id;
     data = new weather_data(this);
     data_caller = new weather_data_caller(city_id, data);
+    animation = new weather_animation(scene);
 
     switch(city_id) {
         case POZNAN:
             city_name = scene->addText("Poznan");
             city_name->setPos(180,265);
+            animation->set_position(180,265);
             break;
         case WARSZAWA:
             city_name = scene->addText("Warszawa");
             city_name->setPos(465,270);
+            animation->set_position(465,270);
             break;
         case KATOWICE:
             city_name = scene->addText("Katowice");
             city_name->setPos(330,500);
+            animation->set_position(330,500);
             break;
         case KRAKOW:
             city_name = scene->addText("Krakow");
             city_name->setPos(380,500);
+            animation->set_position(380,500);
             break;
         case WROCLAW:
             city_name = scene->addText("Wroclaw");
             city_name->setPos(200,380);
+            animation->set_position(200,380);
             break;
         case GDANSK:
             city_name = scene->addText("Gdansk");
             city_name->setPos(270,40);
+            animation->set_position(270,40);
             break;
     }
     QFont temp("Akaash", -1, 50, false);
@@ -38,6 +45,8 @@ city::city(const CITY_ID city_id, QGraphicsScene* scene)
     data_caller->get_data();
     weather_text = scene->addText("");
     weather_text->setFont(temp);
+    animation->change_icons(RAINY_DAY);
+    animation->start_timer();
 }
 
 void city::set_weather_text()
