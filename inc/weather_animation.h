@@ -30,7 +30,7 @@ private:
 public:
     weather_animation(QGraphicsScene* scene);
 
-    QGraphicsPixmapItem* get_current_item() const {return current_item;}
+    QGraphicsPixmapItem* get_current_item() const {return current_item;};
     void set_position(const unsigned int X, const unsigned int Y);
     void change_icons(const ICON_TYPES new_icon_type);
 
