@@ -62,4 +62,5 @@ void weather_animation::change_icons(const ICON_TYPES new_icon_type)
             icons[3].load("img/thunder2.png");
             break;
     }
+    current_item->setPixmap(icons[0]);
 }

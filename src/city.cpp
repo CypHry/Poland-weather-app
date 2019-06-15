@@ -45,7 +45,6 @@ city::city(const CITY_ID city_id, QGraphicsScene* scene)
     data_caller->get_data();
     weather_text = scene->addText("");
     weather_text->setFont(temp);
-    animation->start_timer();
 }
 
 void city::set_weather_text()
@@ -113,10 +112,6 @@ void city::update(const QDate new_date, const QTime new_time)
     {
         reader.read_data_from_file(data, filename);
         data->set_city_name(city_name);
-    }
-    else
-    {
-        qDebug() << "Data file does not exist! (city::update)";
     }
 
     if(data->get_main() == "Rain" || data->get_main() == "Drizzle")

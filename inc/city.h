@@ -78,6 +78,7 @@ public:
      */
     ~city() {delete data; delete data_caller; delete weather_text; delete city_name;}
 
+    weather_animation* get_animation_ptr() const {return animation;}
 public slots:
     /** @brief Sets current weather_text (as temperature) on QGraphicsScene (map of Poland).
      *

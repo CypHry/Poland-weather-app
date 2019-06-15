@@ -18,6 +18,10 @@ weather_MainWindow::weather_MainWindow(QMainWindow* parent) : QMainWindow(parent
     QObject::connect(Ui.city_dropdown, SIGNAL(activated(const QString&)), charts, SLOT(update_data(const QString&)));
     QObject::connect(Ui.chart1_dropdown, SIGNAL(activated(const QString&)), charts, SLOT(update_chart1(const QString&)));
     QObject::connect(Ui.chart2_dropdown, SIGNAL(activated(const QString&)), charts, SLOT(update_chart2(const QString&)));
+    QObject::connect(Ui.animations_checkBox, SIGNAL(stateChanged(int)), this, SLOT(animations_checkbox_change(int)));
+    QObject::connect(this, SIGNAL(start_animations()), w_map, SLOT(start_animations()));
+    QObject::connect(this, SIGNAL(stop_animations()), w_map, SLOT(stop_animations()));
+
 
     Ui.date_edit->setDate(QDate::currentDate());
     Ui.time_edit->setTime(QTime::currentTime());
@@ -32,4 +36,12 @@ void weather_MainWindow::update_cityinfo(std::shared_ptr<city> selected_city)
     c_info->set_city_name(selected_city->get_city_name_ptr());
     c_info->update_weather_texts();
     Ui.cityinfo->setScene(c_info->get_scene_ptr());
+}
+
+void weather_MainWindow::animations_checkbox_change(int state)
+{
+    if(state == Qt::Checked)
+        emit start_animations();
+    else
+        emit stop_animations();
 }

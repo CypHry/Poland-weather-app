@@ -48,3 +48,20 @@ void weather_map::check_selected()
         }
     }
 }
+
+void weather_map::stop_animations()
+{
+    for(unsigned int i = 0; i < cities.size(); i++)
+    {
+        cities[i]->get_animation_ptr()->stop_timer();
+    }
+
+}
+
+void weather_map::start_animations()
+{
+    for(unsigned int i = 0; i < cities.size(); i++)
+    {
+        cities[i]->get_animation_ptr()->start_timer();
+    }
+}

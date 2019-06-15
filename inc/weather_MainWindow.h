@@ -51,6 +51,12 @@ public slots:
      */
     void update_cityinfo(std::shared_ptr<city> selected_city);
 
+    void animations_checkbox_change(int state);
+
+signals:
+    void stop_animations();
+    void start_animations();
+
 };
 
 #endif // WEATHER_MAINWINDOW_H

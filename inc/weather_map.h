@@ -73,6 +73,9 @@ public slots:
      */
     void check_selected();
 
+    void stop_animations();
+    void start_animations();
+
 signals:
     /**@brief Signal emitted after selecting a city on the map.
      *
