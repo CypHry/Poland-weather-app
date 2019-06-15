@@ -9,7 +9,7 @@
 
 /**@file city_info.h
  *
- * The file contains city_info class.
+ * @brief The file contains the declaration of city_info class.
  * city_info contains specific information for a currently displayed city.
  * The information are displayed on its scene and updated after changing data/timeedits.
  */

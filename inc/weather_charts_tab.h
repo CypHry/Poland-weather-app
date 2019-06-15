@@ -13,7 +13,7 @@
 
 /**@file weather_charts_tab.h
  *
- * File contains the weather_charts_tab class.
+ * @brief File contains the declaration of weather_charts_tab class.
  * Weather_charts_tab class holds currently displayed charts in the charts tab.
  * Charts are updated after changing the data/time.
  */
@@ -38,7 +38,7 @@ private:
 public:
     /**@brief Constructor
      *
-     *
+     * Sets the quantities to temperature and humidity and currently used city to Warsaw.
      *
      * @param parent
      */

@@ -51,10 +51,21 @@ public slots:
      */
     void update_cityinfo(std::shared_ptr<city> selected_city);
 
+    /**@brief Emits stop/start animations signal depending on the passed state.
+     *
+     * @param state
+     */
     void animations_checkbox_change(int state);
 
 signals:
+    /**@brief Signal emitted after unchecking the animations check box.
+     *
+     */
     void stop_animations();
+
+    /**@brief Signal emitted after checking the animations check box.
+     *
+     */
     void start_animations();
 
 };

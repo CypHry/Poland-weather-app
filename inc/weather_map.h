@@ -33,8 +33,6 @@ private:
     QDate currently_used_date; ///< Currently used date in the app.
     QTime currently_used_time; ///< Currently used time in the app.
 
-
-    weather_animation* animation;
 public:
     /** @brief Constructor
      *
@@ -73,7 +71,14 @@ public slots:
      */
     void check_selected();
 
+    /**@brief Stops animations displayed on the map of Poland.
+     *
+     */
     void stop_animations();
+
+    /**@nrief Starts animations displayed on the map of Poland.
+     *
+     */
     void start_animations();
 
 signals:

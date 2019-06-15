@@ -31,11 +31,11 @@ class city : public QObject
 
 private:
     CITY_ID city_id; ///< Specifies the created city.
-    weather_data* data; ///< Pointer to container of all the weather data
-    QGraphicsTextItem* weather_text; ///< Pointer to text that is currently displayed on map scene under the city name. Currently temperature
-    QGraphicsTextItem* city_name; ///< Pointer to city name displayed on map scene
-    weather_data_caller* data_caller; ///< Pointer to data_caller class used for getting json from weather server
-    weather_animation* animation;
+    weather_data* data; ///< Pointer to container of all the weather data.
+    QGraphicsTextItem* weather_text; ///< Pointer to the value of temperature that is currently displayed on map scene under the city name.
+    QGraphicsTextItem* city_name; ///< Pointer to city name displayed on map scene.
+    weather_data_caller* data_caller; ///< Pointer to data_caller class used for getting json from weather server.
+    weather_animation* animation; ///< Pointer to animation class used for displaying weather animation.
 
 public:
     /** @brief Constructor
@@ -78,7 +78,14 @@ public:
      */
     ~city() {delete data; delete data_caller; delete weather_text; delete city_name;}
 
+    /**@brief Animation getter
+     *
+     * Returns pointer to the class used for displaying animation.
+     *
+     * @return @link animation @endlink
+     */
     weather_animation* get_animation_ptr() const {return animation;}
+
 public slots:
     /** @brief Sets current weather_text (as temperature) on QGraphicsScene (map of Poland).
      *
