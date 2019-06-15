@@ -1,5 +1,13 @@
 #include <city.h>
 
+/** @file
+ *
+ * @brief @link city @endlink class source file.
+ */
+
+
+
+
 city::city(const CITY_ID city_id, QGraphicsScene* scene)
 {
     this->city_id = city_id;

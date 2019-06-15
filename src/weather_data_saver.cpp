@@ -1,4 +1,8 @@
 #include "weather_data_saver.h"
+/** @file
+ *
+ * @brief @link weather_data_saver @endlink class source file.
+ */
 
 int weather_data_saver::save_data_to_file(const weather_data& data, const QString& filename)
 {

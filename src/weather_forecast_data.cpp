@@ -1,5 +1,9 @@
 #include "weather_forecast_data.h"
 
+/** @file
+ *
+ * @brief @link weather_forecast_data @endlink class source file.
+ */
 
 weather_forecast_data::weather_forecast_data(QObject* parent)
 {

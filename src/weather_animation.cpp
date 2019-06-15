@@ -1,4 +1,8 @@
 #include "weather_animation.h"
+/** @file
+ *
+ * @brief @link weather_animation @endlink class source file.
+ */
 
 weather_animation::weather_animation(QGraphicsScene* scene) : current_icon(0)
 {

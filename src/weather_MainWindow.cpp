@@ -1,5 +1,11 @@
 #include "weather_MainWindow.h"
 
+
+/** @file
+ *
+ * @brief @link weather_MainWindow @endlink class source file.
+ */
+
 weather_MainWindow::weather_MainWindow(QMainWindow* parent) : QMainWindow(parent)
 {
     w_map = new weather_map();

@@ -1,5 +1,11 @@
 #include "weather_data.h"
 
+/** @file
+ *
+ * @brief @link weather_data @endlink class source file.
+ */
+
+
 void weather_data::parse_from_string(QString answer)
 {
     json_string = answer;

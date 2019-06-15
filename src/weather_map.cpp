@@ -1,5 +1,11 @@
 #include "weather_map.h"
 
+/** @file
+ *
+ * @brief @link weather_map @endlink class source file.
+ */
+
+
 weather_map::weather_map()
 {
     scene = new QGraphicsScene(this);

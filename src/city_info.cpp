@@ -1,5 +1,10 @@
 #include "city_info.h"
 
+/** @file
+ *
+ * @brief @link city_info @endlink class source file.
+ */
+
 
 city_info::city_info()
 {

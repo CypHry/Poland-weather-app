@@ -1,4 +1,8 @@
 #include "weather_charts_tab.h"
+/** @file
+ *
+ * @brief @link weather_charts_tab @endlink class source file.
+ */
 
 weather_charts_tab::weather_charts_tab(QObject* parent) : QObject(parent)
 {

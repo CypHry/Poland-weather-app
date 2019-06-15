@@ -1,5 +1,11 @@
 #include "weather_data_caller.h"
 
+/** @file
+ *
+ * @brief @link weather_data_caller @endlink class source file.
+ */
+
+
 weather_data_caller::weather_data_caller(weather_data* data_container) : QObject()
 {
     QObject::connect(this, SIGNAL(answer_changed(QString)), data_container, SLOT(parse_from_string(QString)));

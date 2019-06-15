@@ -1,5 +1,8 @@
 #include "weather_forecaster.h"
-
+/** @file
+ *
+ * @brief @link weather_forecaster @endlink class source file.
+ */
 
 weather_forecaster::weather_forecaster()
 {

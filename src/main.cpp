@@ -2,6 +2,10 @@
 #include "weather_data_caller.h"
 #include "weather_data_saver.h"
 #include "weather_forecaster.cpp"
+/** @file
+ *
+ * @brief Main file.
+ */
 
 int main(int argc, char** argv)
 {
