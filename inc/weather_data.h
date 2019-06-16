@@ -43,8 +43,7 @@ public:
     /** @brief Constructor
      *
      * Connects data_parsed signal with parent's set_weather_text slot.
-     *
-     * @param @link weather_data::parent @endlink
+     * @param parent
      */
     weather_data(QObject* parent = nullptr);
 

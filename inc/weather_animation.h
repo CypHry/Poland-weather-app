@@ -71,12 +71,12 @@ public:
      */
     void change_icons(const ICON_TYPES new_icon_type);
 
-    /**@brief Starts @link timer @endtimer (500 ms).
+    /**@brief Starts @link timer @endlink (500 ms).
      *
      */
     void start_timer() {timer.start(500);}
 
-    /**@brief Stops @link timer @endtimer.
+    /**@brief Stops @link timer @endlink.
     *
     */
     void stop_timer() {timer.stop();}

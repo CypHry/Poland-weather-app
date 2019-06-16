@@ -79,13 +79,13 @@ public slots:
 
     /**@brief Sets new charts series after changing the quantity of the first chart.
     *
-    * @param new_date
+    * @param new_y - specifies new quantity
     */
     void update_chart1(const QString& new_y);
 
     /**@brief Sets new chart series after changing the quantity of the second chart.
     *
-    * @param new_date
+    * @param new_y - specifies new quantity
     */
     void update_chart2(const QString& new_y);
 };
