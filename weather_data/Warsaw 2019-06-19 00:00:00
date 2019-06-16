@@ -1,0 +1,1 @@
+{"clouds":{"all":36},"dt":1560902400,"dt_txt":"2019-06-19 00:00:00","main":{"grnd_level":1005.59,"humidity":85,"pressure":1016.14,"sea_level":1016.14,"temp":16.73,"temp_kf":0,"temp_max":16.73,"temp_min":16.73},"sys":{"pod":"n"},"weather":[{"description":"scattered clouds","icon":"03n","id":802,"main":"Clouds"}],"wind":{"deg":94.666,"speed":3.47}}

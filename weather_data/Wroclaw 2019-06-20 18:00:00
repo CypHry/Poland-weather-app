@@ -1,0 +1,1 @@
+{"clouds":{"all":100},"dt":1561053600,"dt_txt":"2019-06-20 18:00:00","main":{"grnd_level":995.89,"humidity":81,"pressure":1011.51,"sea_level":1011.51,"temp":20.85,"temp_kf":0,"temp_max":20.85,"temp_min":20.85},"rain":{"3h":2.188},"sys":{"pod":"d"},"weather":[{"description":"light rain","icon":"10d","id":500,"main":"Rain"}],"wind":{"deg":344.542,"speed":3.82}}

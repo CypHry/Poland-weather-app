@@ -1,0 +1,1 @@
+{"clouds":{"all":73},"dt":1560999600,"dt_txt":"2019-06-20 03:00:00","main":{"grnd_level":979.4,"humidity":82,"pressure":1011.56,"sea_level":1011.56,"temp":16.25,"temp_kf":0,"temp_max":16.25,"temp_min":16.25},"sys":{"pod":"d"},"weather":[{"description":"broken clouds","icon":"04d","id":803,"main":"Clouds"}],"wind":{"deg":192.657,"speed":0.78}}
